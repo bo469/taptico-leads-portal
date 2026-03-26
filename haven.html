@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haven Services — Growth Marketing Strategy Build</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
+  .prepared-by { text-align: right; }
+  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
+  .prepared-by strong { color: #fff; font-size: 13px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
+  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; }
+  .header-meta { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
+  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+
+  /* BODY */
+  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+
+  /* SECTION */
+  .section { margin-bottom: 36px; }
+  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
+  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
+  p strong { color: #1e293b; }
+
+  /* HIGHLIGHT BOX */
+  .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+  .highlight p { margin: 0; font-size: 14px; color: #1e3a5f; }
+
+  /* SIGNAL CARDS */
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
+  .signal-icon { font-size: 22px; margin-bottom: 8px; }
+  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+
+  /* TIMELINE */
+  .timeline { margin: 16px 0; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .timeline-dot.active { background: #3b82f6; }
+  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
+  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
+  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+
+  /* OFFER BOX */
+  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
+  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
+  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
+  .offer-box ul { margin: 0; padding-left: 20px; }
+  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
+  .offer-price { display: inline-block; background: #3b82f6; color: #fff; padding: 8px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; margin-top: 16px; }
+
+  /* EMAIL TEMPLATE */
+  .email-box { background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 24px 28px; }
+  .email-field { margin-bottom: 8px; font-size: 13px; color: #475569; }
+  .email-field strong { color: #0a1628; width: 70px; display: inline-block; }
+  .email-divider { height: 1px; background: #e2e8f0; margin: 14px 0; }
+  .email-body p { font-size: 14px; line-height: 1.8; color: #334155; margin: 0 0 14px 0; }
+
+  /* WARNING */
+  .warning { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: #9a3412; }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+
+  @media(max-width: 600px) {
+    .signal-grid { grid-template-columns: 1fr; }
+    .header { padding: 24px; }
+    .body { padding: 24px; }
+    .header-top { flex-direction: column; gap: 12px; }
+    .prepared-by { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">T</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">March 2026 · Confidential</p>
+      </div>
+    </div>
+    <h1>Haven Services<br>90-Day Growth Marketing Plan</h1>
+    <h2>A strategic brief prepared before your new Director of Digital Marketing starts</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>📍</span>Columbus, Ohio</div>
+      <div class="meta-chip"><span>💰</span>$100M+ Revenue</div>
+      <div class="meta-chip"><span>🎯</span>$200M by 2031</div>
+      <div class="meta-chip"><span>⚡</span>Marketing leadership gap — now</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- SECTION 1 -->
+    <div class="section">
+      <div class="section-label">The Situation</div>
+      <h3>What's happening at Haven right now</h3>
+      <p>On March 11, 2026, Haven Services posted a Director of Digital Marketing & Customer Experience role. The salary range ($115K–$125K) signals one thing clearly: <strong>Haven has decided marketing is a priority and the budget is already allocated.</strong></p>
+      <p>A company targeting $200M in revenue by 2031 — doubling from current size — cannot afford 90–120 days of marketing stagnation while a new hire ramps up. Every week without a functioning digital marketing engine is pipeline that isn't building.</p>
+
+      <div class="highlight">
+        <p><strong>The real question isn't whether Haven needs better marketing.</strong> They've already answered that by posting the role. The question is whether a new hire — or an experienced partner — is the faster path to results.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+      <div class="section-label">Buying Signals</div>
+      <h3>Why this moment matters</h3>
+      <div class="signal-grid">
+        <div class="signal-card hot">
+          <div class="signal-icon">🔥</div>
+          <h4>Active hiring signal</h4>
+          <p>Director of Digital Marketing role posted March 11. Budget approved. Decision-maker has authority to spend.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">📈</div>
+          <h4>Aggressive growth mandate</h4>
+          <p>$100M → $200M by 2031. They need a marketing engine, not a marketing experiment.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">⏱️</div>
+          <h4>90-day ramp gap</h4>
+          <p>A new hire takes 60–90 days to ramp. The window where they need external support is right now.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">🏠</div>
+          <h4>Multi-trade complexity</h4>
+          <p>HVAC, plumbing, and electrical under one brand requires coordinated local SEO, review management, and demand gen — not one-size-fits-all campaigns.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section">
+      <div class="section-label">What We'd Build</div>
+      <h3>The 90-day plan Haven needs</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot active">30</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 1–30 · Foundation & Visibility</h4>
+            <p>Audit and fix all Google Business Profiles across Haven's locations. Establish baseline local SEO rankings for "Columbus HVAC," "Columbus plumbing," "Columbus electrician" and top service-area keywords. Fix citation inconsistencies. Launch review generation program (the fastest ROI move in home services). Set up call tracking so we know which channels are driving calls today.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">60</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 31–60 · Demand Generation</h4>
+            <p>Launch targeted Google Local Service Ads (LSA) for HVAC, plumbing, and electrical. Build location-specific landing pages. Stand up a seasonal demand calendar (HVAC peaks spring and fall — we need campaigns ready before the season, not during it). Begin content strategy targeting local homeowners with service-specific educational content.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">90</div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 61–90 · Scale & Handoff</h4>
+            <p>Email/SMS re-engagement campaign for Haven's existing customer base (fastest revenue recovery play in home services). Full analytics dashboard built and running. If Haven hires a Director in this window, Taptico transitions from full execution to senior advisory — we don't disappear, we become the strategic layer behind their internal team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section">
+      <div class="section-label">The Offer</div>
+      <div class="offer-box">
+        <h3>The Dating Phase — Start in two weeks</h3>
+        <p>90-day engagement to prove the model before any long-term commitment.</p>
+        <ul>
+          <li>Full local SEO audit and remediation (all Haven locations)</li>
+          <li>Google Business Profile optimization and review velocity program</li>
+          <li>Google Local Service Ads setup and management</li>
+          <li>Call tracking and attribution reporting</li>
+          <li>Seasonal demand calendar for HVAC, plumbing, and electrical</li>
+          <li>Weekly performance reporting — you see exactly what's working</li>
+          <li>Senior strategist available when the new Director comes on board</li>
+        </ul>
+        <div class="offer-price">$5,000–$7,500/month · No long-term contract required</div>
+      </div>
+      <p style="margin-top:12px; font-size:13px; color:#64748b;">Compare that to $125K salary + benefits + 90-day ramp. Even a 3-month engagement at the top of our range is roughly what Haven would spend on one month of a Director's fully-loaded cost.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section">
+      <div class="section-label">What Happens If They Wait</div>
+      <div class="warning">
+        <strong>The cost of the hiring window:</strong> Every week without a functioning demand gen program is a week of missed calls. In multi-trade home services, a single HVAC job averages $1,200–$3,500. A well-run local SEO + LSA program typically drives 15–40 incremental calls per month per location. For a company with multiple locations targeting $200M, the math is straightforward.
+      </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section">
+      <div class="section-label">Ready-to-Send Outreach</div>
+      <h3>Send this to their hiring decision-maker</h3>
+      <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Find the CEO/Owner via havenservices.com or search "Haven Services LLC Ohio" on LinkedIn. Also look for "The Plumbing Source" and "Heart of Ohio" — same ownership group.</p>
+
+      <div class="email-box">
+        <div class="email-field"><strong>Subject:</strong> We built Haven's 90-day marketing plan — before your Director starts</div>
+        <div class="email-field"><strong>To:</strong> [CEO/Owner Name] — havenservices.com</div>
+        <div class="email-field"><strong>From:</strong> dave@taptico.com</div>
+        <div class="email-divider"></div>
+        <div class="email-body">
+          <p>Hi [First Name],</p>
+          <p>Saw the Director of Digital Marketing role go up on March 11. Before you fill it, I put together a 90-day growth marketing plan for Haven — not a proposal, just a real plan showing what we'd do in the first three months to move the needle toward your $200M target.</p>
+          <p>It covers local SEO, Google LSA, review velocity, demand gen for HVAC/plumbing/electrical, and what a seasonal campaign calendar looks like before spring peak season.</p>
+          <p>The plan is yours regardless of what you decide. I'd rather show you what we're capable of than tell you about it.</p>
+          <p>Can I send it over? Or if you'd rather talk through it — 15 minutes on your calendar and I'll walk you through everything.</p>
+          <p>Dave Clapper<br>dave@taptico.com<br>Taptico Solutions</p>
+        </div>
+      </div>
+
+      <div class="highlight" style="margin-top:16px;">
+        <p><strong>Pro tip:</strong> Attach this PDF as "Haven_90Day_Plan_Taptico.pdf" so they see the plan the moment they open the email. The subject line promises something — the attachment delivers it.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="section">
+      <div class="section-label">Contact Research Path</div>
+      <h3>Finding the right person</h3>
+      <p>Haven Services LLC operates as Haven Services, The Plumbing Source, and Heart of Ohio. The CEO/Owner may be listed under any of these brands on LinkedIn.</p>
+      <p><strong>LinkedIn:</strong> Search "Haven Services LLC Ohio" → filter by CEO, President, Owner. <br>
+      <strong>Website:</strong> havenservices.com/about or /team<br>
+      <strong>Phone play:</strong> Call main line, ask for the person managing the Director of Digital Marketing search. Front desk will connect you or give a name.<br>
+      <strong>Apollo:</strong> Run domain havenservices.com to pull executive contacts and confirm email format.</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · March 2026<br>
+    Prepared for Haven Services · Confidential — not for external distribution
+  </div>
+
+</div>
+</body>
+</html>
