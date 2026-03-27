@@ -144,6 +144,7 @@
     <button class="filter-btn" data-filter="Waiting on Reply">Waiting on Reply</button>
     <button class="filter-btn" data-filter="Researching">Researching</button>
     <button class="filter-btn" data-filter="Assigned">Assigned</button>
+    <button class="filter-btn" data-filter="Warm Relationship">Warm</button>
     <input class="search-input" id="searchInput" type="text" placeholder="Search leads...">
   </div>
 
@@ -324,6 +325,51 @@ const leads = [
     discordVince: "https://discord.com/channels/1475205121603272764/1475213455412690965",
     discordIris: "https://discord.com/channels/1475205121603272764/1475213457987993755",
     notes: "High upside if right contact and angle found."
+  },
+  {
+    company: "Revenue Growth",
+    initials: "RG",
+    industry: "B2B Services / AI-Driven Growth Stack",
+    revenue: "$5M–$15M est.",
+    status: "Assigned",
+    hot: false,
+    trigger: "AI-driven sales/marketing infrastructure — competitor or adjacent positioning",
+    contact: "TBD",
+    contactTitle: "CEO / VP Demand Generation",
+    contactEmail: "TBD — verify via Apollo",
+    contactLinkedIn: "",
+    owners: "Iris (research) · Vince (outreach)",
+    angle: "Competitor-aware wedge — position Taptico as the AI-native upgrade",
+    assets: [],
+    outreach: "Not yet sent.",
+    nextAction: "Iris: validate company identity + find correct decision maker. Build competitor-aware outreach angle.",
+    discordVince: "https://discord.com/channels/1475205121603272764/1475213455412690965",
+    discordIris: "https://discord.com/channels/1475205121603272764/1475213457987993755",
+    notes: "Needs contact validation before any outreach. May position as adjacent vs. competitor depending on their exact offering."
+  },
+  {
+    company: "Averso Co (Andrew Averso)",
+    initials: "AC",
+    industry: "Branding Agency / Creative",
+    revenue: "Early-stage (new agency)",
+    status: "Warm Relationship",
+    hot: true,
+    trigger: "Nick has existing relationship — Vision Alignment meeting March 21, 2026",
+    contact: "Andrew Averso",
+    contactTitle: "Founder / Creative Director",
+    contactEmail: "andrew@averso.co",
+    contactLinkedIn: "https://www.linkedin.com/in/andrewavereso/",
+    owners: "Bo (strategy) · Iris (dossier complete)",
+    angle: "TapticoOS SSS deployment #2 — position as AI-powered creative agency OS for Averso Co. Branding agencies need AI for competitive velocity, content scale, and winning bigger pitches.",
+    assets: [
+      { name: "Andrew Averso Dossier", link: "", status: "Complete" },
+      { name: "Taptico.AI Creative Brief for Andrew Averso", link: "", status: "Complete" }
+    ],
+    outreach: "Warm — Nick met March 21. Vision Alignment recap sent. Next move: formal TapticoOS pitch.",
+    nextAction: "Nick leads next conversation. Brief: frame TapticoOS as the agency's unfair advantage for winning Fortune 500 pitches. Co-founder equity conversation is on the table.",
+    discordVince: "https://discord.com/channels/1475205121603272764/1475213455412690965",
+    discordIris: "https://discord.com/channels/1475205121603272764/1475213457987993755",
+    notes: "Former co-founder OUST Agency (Atlanta). Creative Director + equity partner per business plan. TapticoAI equity conversation in progress. NOT a cold outreach lead — warm relationship owned by Nick."
   }
 ];
 
@@ -333,7 +379,8 @@ const statusBadge = {
   "Waiting on Reply": "badge-waiting",
   "Researching": "badge-outreach",
   "Assigned": "badge-pending",
-  "Reference": "badge-reference"
+  "Reference": "badge-reference",
+  "Warm Relationship": "badge-hot"
 };
 
 function renderStats() {
