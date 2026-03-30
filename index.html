@@ -102,6 +102,16 @@
   .team-btn:hover { opacity: 0.8; }
   .next-action { margin-left: auto; font-size: 12px; color: var(--muted); font-style: italic; }
 
+  /* STATUS EDITOR */
+  .status-editor { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+  .status-select { padding: 6px 10px; border-radius: 7px; border: 1.5px solid var(--border); font-size: 12px; font-weight: 600; color: var(--text); background: #fff; cursor: pointer; outline: none; }
+  .status-select:focus { border-color: var(--accent); }
+  .date-input { padding: 6px 10px; border-radius: 7px; border: 1.5px solid var(--border); font-size: 12px; color: var(--text); background: #fff; outline: none; }
+  .date-input:focus { border-color: var(--accent); }
+  .save-btn { padding: 6px 12px; border-radius: 7px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; border: none; cursor: pointer; }
+  .save-btn:hover { opacity: 0.85; }
+  .saved-flash { font-size: 11px; color: var(--green); font-weight: 700; display: none; }
+
   /* EMPTY */
   .empty { text-align: center; padding: 48px; color: var(--muted); font-size: 14px; }
 
@@ -226,7 +236,8 @@ const leads = [
     initials: "SH",
     industry: "Home Services / PE-backed consolidator",
     revenue: "$50M+ est.",
-    status: "Researching",
+    status: "Outreach Sent",
+    outreachDate: "2026-03-30",
     hot: false,
     trigger: "Dunn's HVAC acquisition — Feb 23, 2026",
     contact: "Jarrod Brinker",
@@ -236,8 +247,8 @@ const leads = [
     owners: "Iris (intel) · Vince (outreach) · Scribe (packaging)",
     angle: "Acquisition Integration Risk Report — brand, SEO, local listings all at risk",
     assets: [],
-    outreach: "Not yet sent.",
-    nextAction: "Build acquisition integration strategy brief. Then send asset-led outreach to Jarrod.",
+    outreach: "✅ Initial outreach sent by Dave — March 30, 2026.",
+    nextAction: "Follow up Day 4 (April 3) if no reply.",
     discordVince: "https://discord.com/channels/1475205121603272764/1475213455412690965",
     discordIris: "https://discord.com/channels/1475205121603272764/1475213457987993755",
     notes: "Serial acquirer (Gryphon PE). CEO: Bryan Benak. COO: Drew Poskon. Win Dunn's, win every future deal."
@@ -473,6 +484,7 @@ function renderAssets(assets) {
 
 function renderCard(lead) {
   const badge = statusBadge[lead.status] || 'badge-pending';
+  const safeId = lead.company.replace(/[^a-zA-Z0-9]/g,'-');
   return `
   <div class="lead-card" id="card-${lead.company.replace(/\s+/g,'-')}">
     <div class="lead-header" onclick="toggleCard(this)">
@@ -516,7 +528,14 @@ function renderCard(lead) {
         <a class="action-btn btn-scribe" href="https://discord.com/channels/1475205121603272764/1475213478577963189" target="_blank">✍️ Scribe</a>
         <a class="action-btn btn-email" href="mailto:${lead.contactEmail}?subject=Quick question&body=Hi ${lead.contact},%0D%0A%0D%0A">✉️ Email ${lead.contact.split(' ')[0]}</a>
         ${lead.assets.length > 0 && lead.assets[0].link ? `<a class="action-btn btn-asset" href="${lead.assets[0].link}" target="_blank">📎 Open Asset</a>` : ''}
-        <span class="next-action">→ ${lead.nextAction.substring(0,80)}${lead.nextAction.length>80?'…':''}</span>
+        <div class="status-editor">
+          <select class="status-select" id="status-${safeId}" onchange="statusChanged('${safeId}')">
+            ${['New','Researching','Asset in Build','Ready for Outreach','Outreach Sent','Waiting on Reply','Follow-Up Needed','Meeting Booked','Won','Lost','Parked','Reference'].map(s => `<option value="${s}"${s===lead.status?' selected':''}>${s}</option>`).join('')}
+          </select>
+          <input type="date" class="date-input" id="date-${safeId}" value="${lead.outreachDate||''}" placeholder="Date sent">
+          <button class="save-btn" onclick="saveStatus('${safeId}','${lead.company}')">Save</button>
+          <span class="saved-flash" id="flash-${safeId}">✓ Saved</span>
+        </div>
       </div>
     </div>
   </div>`;
@@ -527,6 +546,56 @@ function toggleCard(header) {
   const btn = header.querySelector('.expand-btn');
   body.classList.toggle('open');
   btn.classList.toggle('open');
+}
+
+function statusChanged(safeId) {
+  // auto-set today's date if blank
+  const dateEl = document.getElementById('date-' + safeId);
+  if (!dateEl.value) {
+    const today = new Date().toISOString().split('T')[0];
+    dateEl.value = today;
+  }
+}
+
+function saveStatus(safeId, company) {
+  const sel = document.getElementById('status-' + safeId);
+  const dateEl = document.getElementById('date-' + safeId);
+  const flash = document.getElementById('flash-' + safeId);
+  const newStatus = sel.value;
+  const newDate = dateEl.value;
+
+  // Save to localStorage
+  const key = 'lead-status-' + safeId;
+  localStorage.setItem(key, JSON.stringify({status: newStatus, date: newDate}));
+
+  // Update badge in header
+  const card = document.getElementById('card-' + safeId);
+  if (card) {
+    const badgeEl = card.querySelector('.badge');
+    const badgeClass = statusBadge[newStatus] || 'badge-pending';
+    if (badgeEl) {
+      badgeEl.className = 'badge ' + badgeClass;
+      badgeEl.textContent = newStatus;
+    }
+  }
+
+  // Flash saved
+  flash.style.display = 'inline';
+  setTimeout(() => flash.style.display = 'none', 2000);
+}
+
+function loadSavedStatuses() {
+  leads.forEach(lead => {
+    const safeId = lead.company.replace(/[^a-zA-Z0-9]/g,'-');
+    const saved = localStorage.getItem('lead-status-' + safeId);
+    if (saved) {
+      try {
+        const data = JSON.parse(saved);
+        if (data.status) lead.status = data.status;
+        if (data.date) lead.outreachDate = data.date;
+      } catch(e) {}
+    }
+  });
 }
 
 let currentFilter = 'all';
@@ -570,6 +639,7 @@ const now = new Date();
 document.getElementById('headerDate').innerHTML =
   `${now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})}<br><span style="font-size:11px;">Last updated by Bo</span>`;
 
+loadSavedStatuses();
 renderStats();
 renderAll('all', '');
 </script>
