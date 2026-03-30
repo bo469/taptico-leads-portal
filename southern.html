@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southern Home Services — Dunn's Integration Risk Report</title>
+<style>
+  body { margin:0; padding:0; font-family:'Helvetica Neue',Arial,sans-serif; background:#f0f4f8; color:#1e293b; }
+  .wrapper { max-width:780px; margin:0 auto; padding:32px 20px; }
+
+  .header { background:linear-gradient(135deg,#1a0a0a 0%,#6b1a1a 100%); border-radius:14px 14px 0 0; padding:36px 40px; }
+  .header-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:20px; }
+  .logo-mark { width:48px; height:48px; background:rgba(255,255,255,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; color:#fca5a5; }
+  .prepared-by { text-align:right; }
+  .prepared-by p { margin:0; color:#fca5a5; font-size:12px; }
+  .prepared-by strong { color:#fff; font-size:13px; }
+  .header h1 { color:#fff; font-size:26px; font-weight:800; margin:0 0 6px 0; line-height:1.2; }
+  .header h2 { color:#fca5a5; font-size:14px; font-weight:400; margin:0; }
+  .header-meta { display:flex; gap:12px; margin-top:24px; flex-wrap:wrap; }
+  .meta-chip { background:rgba(255,255,255,0.1); border-radius:20px; padding:6px 14px; font-size:12px; color:#fff; }
+  .meta-chip span { color:#fca5a5; margin-right:4px; }
+
+  .body { background:#fff; border-radius:0 0 14px 14px; padding:40px; }
+
+  .section { margin-bottom:36px; }
+  .section-label { font-size:10px; font-weight:800; color:#dc2626; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  .section-label::after { content:''; flex:1; height:1px; background:#e2e8f0; }
+  h3 { font-size:18px; font-weight:700; color:#1a0a0a; margin:0 0 12px 0; }
+  p { font-size:14px; line-height:1.75; color:#475569; margin:0 0 12px 0; }
+  p strong { color:#1e293b; }
+
+  /* COUNTDOWN */
+  .countdown-box { background:linear-gradient(135deg,#7f1d1d 0%,#991b1b 100%); border-radius:12px; padding:24px 28px; margin:16px 0; display:flex; align-items:center; gap:24px; }
+  .countdown-num { font-size:56px; font-weight:900; color:#fff; line-height:1; flex-shrink:0; }
+  .countdown-text h4 { color:#fff; font-size:18px; font-weight:700; margin:0 0 4px 0; }
+  .countdown-text p { color:#fca5a5; font-size:13px; margin:0; line-height:1.5; }
+
+  /* RISK CARDS */
+  .risk-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin:16px 0; }
+  .risk-card { border-radius:10px; padding:18px; text-align:center; }
+  .risk-card.critical { background:#fff5f5; border:2px solid #fca5a5; }
+  .risk-card.high { background:#fff7ed; border:2px solid #fed7aa; }
+  .risk-card.medium { background:#fffbeb; border:2px solid #fde68a; }
+  .risk-icon { font-size:24px; margin-bottom:8px; }
+  .risk-card h4 { font-size:12px; font-weight:800; margin:0 0 6px 0; text-transform:uppercase; letter-spacing:0.05em; }
+  .risk-card.critical h4 { color:#991b1b; }
+  .risk-card.high h4 { color:#9a3412; }
+  .risk-card.medium h4 { color:#92400e; }
+  .risk-card p { font-size:12px; line-height:1.5; margin:0; color:#64748b; }
+
+  /* FINDINGS */
+  .finding { display:flex; gap:16px; padding:16px 0; border-bottom:1px solid #f1f5f9; }
+  .finding:last-child { border-bottom:none; }
+  .finding-num { width:32px; height:32px; border-radius:50%; background:#dc2626; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; flex-shrink:0; margin-top:2px; }
+  .finding-content h4 { font-size:14px; font-weight:700; color:#1a0a0a; margin:0 0 4px 0; }
+  .finding-content p { font-size:13px; color:#64748b; margin:0; line-height:1.6; }
+
+  /* TIMELINE */
+  .timeline { margin:16px 0; }
+  .tl-item { display:flex; gap:16px; margin-bottom:16px; }
+  .tl-left { flex-shrink:0; display:flex; flex-direction:column; align-items:center; }
+  .tl-dot { width:32px; height:32px; border-radius:50%; background:#1a0a0a; display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:800; flex-shrink:0; }
+  .tl-dot.urgent { background:#dc2626; }
+  .tl-line { width:2px; background:#e2e8f0; flex:1; margin-top:4px; min-height:20px; }
+  .tl-right { padding-top:4px; padding-bottom:12px; }
+  .tl-right h4 { font-size:14px; font-weight:700; color:#1a0a0a; margin:0 0 4px 0; }
+  .tl-right p { font-size:13px; color:#64748b; margin:0; line-height:1.6; }
+
+  /* OFFER */
+  .offer-box { background:#1a0a0a; border-radius:12px; padding:28px 32px; margin:16px 0; }
+  .offer-box h3 { color:#fff; font-size:18px; margin:0 0 6px 0; }
+  .offer-box p { color:#fca5a5; font-size:14px; margin:0 0 16px 0; }
+  .offer-box ul { margin:0; padding-left:20px; }
+  .offer-box ul li { color:#e2e8f0; font-size:14px; line-height:1.8; }
+  .offer-price { display:inline-block; background:#dc2626; color:#fff; padding:8px 20px; border-radius:8px; font-size:15px; font-weight:700; margin-top:16px; }
+
+  /* EMAIL */
+  .email-box { background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:10px; padding:24px 28px; }
+  .email-field { margin-bottom:8px; font-size:13px; color:#475569; }
+  .email-field strong { color:#0a1628; width:70px; display:inline-block; }
+  .email-divider { height:1px; background:#e2e8f0; margin:14px 0; }
+  .email-body p { font-size:14px; line-height:1.8; color:#334155; margin:0 0 14px 0; }
+
+  .highlight { background:#fff5f5; border-left:4px solid #dc2626; padding:14px 18px; border-radius:0 8px 8px 0; margin:16px 0; font-size:14px; color:#7f1d1d; }
+
+  .footer { text-align:center; padding:24px; font-size:11px; color:#94a3b8; }
+
+  @media(max-width:600px) {
+    .risk-grid { grid-template-columns:1fr; }
+    .countdown-box { flex-direction:column; gap:12px; }
+    .header { padding:24px; }
+    .body { padding:24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">T</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">March 2026 · Confidential</p>
+      </div>
+    </div>
+    <h1>Southern Home Services<br>Dunn's Integration Risk Report</h1>
+    <h2>What's at risk in the first 60 days after the Anniston/Pelham acquisition</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>📍</span>Anniston + Pelham, AL</div>
+      <div class="meta-chip"><span>📅</span>Acquired Feb 23, 2026</div>
+      <div class="meta-chip"><span>⚠️</span>35 days post-close</div>
+      <div class="meta-chip"><span>🏢</span>Gryphon Investors</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- COUNTDOWN -->
+    <div class="section">
+      <div class="section-label">The Clock</div>
+      <div class="countdown-box">
+        <div class="countdown-num">35</div>
+        <div class="countdown-text">
+          <h4>Days since Dunn's closed</h4>
+          <p>The 30–90 day window is the most critical period in any home services acquisition. It's when digital brand confusion becomes permanent lost revenue — and when competitors move into the gap.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RISK OVERVIEW -->
+    <div class="section">
+      <div class="section-label">Risk Assessment</div>
+      <h3>Three active risks right now</h3>
+      <div class="risk-grid">
+        <div class="risk-card critical">
+          <div class="risk-icon">🔴</div>
+          <h4>Critical</h4>
+          <p>Google Business Profile brand split — Dunn's and Southern competing for the same search terms in Anniston and Pelham</p>
+        </div>
+        <div class="risk-card high">
+          <div class="risk-icon">🟠</div>
+          <h4>High</h4>
+          <p>Local SEO cannibalization — two brands under Southern's umbrella bidding against each other, reducing visibility for both</p>
+        </div>
+        <div class="risk-card medium">
+          <div class="risk-icon">🟡</div>
+          <h4>Medium</h4>
+          <p>Review equity at risk — Dunn's review history (trust built over years) not yet protected or migrated to the Southern brand</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- KEY FINDINGS -->
+    <div class="section">
+      <div class="section-label">What We Found</div>
+      <h3>The Dunn's integration gap — specific findings</h3>
+
+      <div class="finding">
+        <div class="finding-num">1</div>
+        <div class="finding-content">
+          <h4>Dunn's brand is still live and driving calls to an unowned identity</h4>
+          <p>Dunn's HVAC, Plumbing & Electrical still has active Google Business Profiles in Anniston and Pelham. Every inbound call, every review, every "open now" query is landing on a brand Southern now owns — but which still reads as an independent operator to the algorithm and to customers. Without consolidation, Southern can't capture the full inbound value of what they acquired.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">2</div>
+        <div class="finding-content">
+          <h4>Two brands in the same market = self-competition</h4>
+          <p>When a prospect searches "HVAC repair Anniston AL," they may see both Dunn's and a Southern brand in the same results. Southern is now paying to split their own market share. In home services, local search visibility is a zero-sum game — every click that goes to Dunn's instead of a unified Southern brand is a click that didn't build long-term equity in the acquirer's identity.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">3</div>
+        <div class="finding-content">
+          <h4>The competitor window is open</h4>
+          <p>Regional HVAC operators in Calhoun County and Jefferson County know Southern just acquired Dunn's. Any period of brand confusion, inconsistent messaging, or reduced review velocity is an opening for competitors to position themselves as the "local, reliable alternative" while Southern's integration is in flux. The longer the integration gap, the harder it is to recover market position.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div class="finding-num">4</div>
+        <div class="finding-content">
+          <h4>Customer database overlap is unmanaged</h4>
+          <p>Dunn's and any other Southern brands operating near Anniston/Pelham likely share customer addresses. Without consolidation, Southern risks double-sending campaigns, inconsistent service history, and customer confusion about who is servicing their home — a trust issue in an industry that runs entirely on repeat and referral business.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT TAPTICO DOES -->
+    <div class="section">
+      <div class="section-label">The Fix</div>
+      <h3>What needs to happen in the next 30 days</h3>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot urgent">NOW</div><div class="tl-line"></div></div>
+          <div class="tl-right">
+            <h4>Google Business Profile audit + consolidation strategy</h4>
+            <p>Map every Dunn's GBP listing. Define the migration path: merge, redirect, or maintain as a Southern sub-brand with unified ownership. Protect existing review equity before it drifts.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot">Day 15</div><div class="tl-line"></div></div>
+          <div class="tl-right">
+            <h4>Local SEO deconfliction + unified keyword strategy</h4>
+            <p>Eliminate cannibalization. Define which brand owns which terms in which geography. Build a single Southern brand as the dominant local search presence across Anniston and Pelham.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot">Day 20</div><div class="tl-line"></div></div>
+          <div class="tl-right">
+            <h4>Dunn's customer base re-engagement under Southern brand</h4>
+            <p>Email/SMS campaign to Dunn's existing customers introducing Southern, establishing trust continuity, and setting the brand narrative: same trusted local team, now with more resources behind them.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot">Day 30</div></div>
+          <div class="tl-right">
+            <h4>Competitor monitoring + market defense</h4>
+            <p>Track competitor activity in Calhoun and Jefferson counties. Set up alerts for any aggressive moves into Southern's newly acquired territory during the integration window.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LONG GAME -->
+    <div class="highlight">
+      <strong>The bigger picture:</strong> Southern is a serial acquirer. Every deal they do has this same integration marketing problem. If Taptico becomes the integration partner for Dunn's, we become the default partner for every acquisition that follows. That's not a one-time project — that's a strategic relationship.
+    </div>
+
+    <!-- OFFER -->
+    <div class="section">
+      <div class="section-label">The Offer</div>
+      <div class="offer-box">
+        <h3>Integration Marketing Sprint — Start in two weeks</h3>
+        <p>30-day focused engagement on the Dunn's integration. Prove the model, then scale to every future acquisition.</p>
+        <ul>
+          <li>Google Business Profile audit + consolidation plan (Anniston + Pelham locations)</li>
+          <li>Local SEO deconfliction + unified keyword strategy</li>
+          <li>Dunn's customer re-engagement campaign under the Southern brand</li>
+          <li>Citation and directory cleanup across Yelp, Angi, HomeAdvisor</li>
+          <li>Competitor monitoring setup for Calhoun and Jefferson counties</li>
+          <li>Weekly reporting — you see exactly what moved and what's next</li>
+          <li>Integration playbook for future acquisitions (so every deal after this is faster)</li>
+        </ul>
+        <div class="offer-price">$5,000–$7,500/month · 30-day sprint to start</div>
+      </div>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="section">
+      <div class="section-label">Ready-to-Send Outreach</div>
+      <h3>Send this to Jarrod Brinker</h3>
+      <div class="email-box">
+        <div class="email-field"><strong>Subject:</strong> We pulled the Dunn's integration data — 3 things that need to move before Day 60</div>
+        <div class="email-field"><strong>To:</strong> Jarrod Brinker — jarrod.brinker@southernhomeservices.com</div>
+        <div class="email-field"><strong>From:</strong> dave@taptico.com</div>
+        <div class="email-divider"></div>
+        <div class="email-body">
+          <p>Hi Jarrod,</p>
+          <p>Congrats on the Dunn's close. That's a strong footprint add in Alabama — Anniston and Pelham are solid markets.</p>
+          <p>I spent some time looking at the Dunn's digital presence this week. Three things jumped out that typically cause permanent damage if they aren't addressed in the first 60 days post-close: the GBP brand split, local SEO cannibalization between the brands, and the Dunn's customer base sitting without a re-engagement campaign under the Southern name.</p>
+          <p>I put it all in a brief — took about 20 minutes to read, specific to your Alabama markets. No pitch, just what we found and what needs to happen next.</p>
+          <p>Can I send it over? Happy to walk through it in 15 minutes if easier.</p>
+          <p>Dave Clapper<br>dave@taptico.com<br>Taptico Solutions</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · March 2026<br>
+    Prepared for Southern Home Services · Confidential — internal use only
+  </div>
+
+</div>
+</body>
+</html>
