@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>26Health / Optimal Integrative Care — 90-Day Atlanta Launch Plan</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+
+  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
+  .prepared-by { text-align: right; }
+  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
+  .prepared-by strong { color: #fff; font-size: 13px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
+  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; }
+  .header-meta { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
+  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+
+  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+
+  .section { margin-bottom: 36px; }
+  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
+  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
+  p strong { color: #1e293b; }
+
+  .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+  .highlight p { margin: 0; font-size: 14px; color: #1e3a5f; }
+
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
+  .signal-icon { font-size: 22px; margin-bottom: 8px; }
+  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+
+  .timeline { margin: 16px 0; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .timeline-dot.active { background: #3b82f6; }
+  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
+  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
+  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+
+  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
+  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
+  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
+  .offer-box ul { margin: 0; padding-left: 20px; }
+  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
+  .offer-price { display: inline-block; background: #3b82f6; color: #fff; padding: 8px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; margin-top: 16px; }
+
+  .email-box { background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 24px 28px; }
+  .email-field { margin-bottom: 8px; font-size: 13px; color: #475569; }
+  .email-field strong { color: #0a1628; width: 70px; display: inline-block; }
+  .email-divider { height: 1px; background: #e2e8f0; margin: 14px 0; }
+  .email-body p { font-size: 14px; line-height: 1.8; color: #334155; margin: 0 0 14px 0; }
+
+  .warning { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: #9a3412; }
+
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+
+  @media(max-width: 600px) {
+    .signal-grid { grid-template-columns: 1fr; }
+    .header { padding: 24px; }
+    .body { padding: 24px; }
+    .header-top { flex-direction: column; gap: 12px; }
+    .prepared-by { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">T</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">March 2026 · Confidential</p>
+      </div>
+    </div>
+    <h1>26Health / Optimal Integrative Care<br>90-Day Atlanta Brand Launch Plan</h1>
+    <h2>A strategic brief for a healthcare organization entering Atlanta — with zero local brand presence and a patient community that doesn't know what just changed</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>📍</span>West Midtown / Buckhead, Atlanta</div>
+      <div class="meta-chip"><span>🏥</span>Inclusive + LGBTQ+ Care</div>
+      <div class="meta-chip"><span>📅</span>Acquisition: March 13, 2026</div>
+      <div class="meta-chip"><span>⚡</span>Zero Atlanta digital presence — now</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- SECTION 1 -->
+    <div class="section">
+      <div class="section-label">The Situation</div>
+      <h3>What's happening at 26Health right now</h3>
+      <p>On March 13, 2026, 26Health — a comprehensive, inclusive healthcare organization based in Orlando, FL — announced the acquisition of Optimal Integrative Care, a respected Atlanta medical practice at <strong>3193 Howell Mill Road NW in West Midtown/Buckhead</strong>. The practice specializes in infectious disease, internal medicine, and primary care.</p>
+      <p>26Health CEO Latrice Stewart: <em>"Our shared commitment to compassionate, comprehensive care makes this a natural partnership. We look forward to building on the strong foundation that Optimal has established while expanding access to care in Atlanta and beyond."</em></p>
+      <p>What this means in plain terms: <strong>26Health is now in Atlanta, and almost nobody in Atlanta knows it.</strong> The practice is keeping the Optimal Integrative Care name, patients are being told nothing will change — but the parent organization that owns and operates the clinic is completely unknown in this market.</p>
+
+      <div class="highlight">
+        <p><strong>The core problem:</strong> 26Health has a powerful, mission-driven brand built around inclusive care, HIV prevention, and health equity — exactly what Atlanta's LGBTQ+ community and underserved patients need. But without local brand presence, that mission doesn't reach the people it's meant to serve.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+      <div class="section-label">Why This Moment</div>
+      <h3>Four signals that make now the window</h3>
+      <div class="signal-grid">
+        <div class="signal-card hot">
+          <div class="signal-icon">🏳️‍🌈</div>
+          <h4>LGBTQ+ healthcare gap in Atlanta</h4>
+          <p>Atlanta has one of the largest LGBTQ+ communities in the Southeast. 26Health's affirming care model fills a real gap — but the community can't seek care they don't know exists.</p>
+        </div>
+        <div class="signal-card hot">
+          <div class="signal-icon">🔍</div>
+          <h4>Zero local SEO presence</h4>
+          <p>"HIV specialist Atlanta," "LGBTQ doctor Midtown Atlanta," "integrative care Atlanta" — all high-value searches with zero 26Health presence. That's a patient acquisition crisis waiting to happen.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">🏥</div>
+          <h4>Two-brand complexity</h4>
+          <p>Operating as Optimal Integrative Care but owned by 26Health creates a dual-brand challenge that requires expert navigation — get it wrong and you confuse existing patients.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">📰</div>
+          <h4>PR window still open</h4>
+          <p>The acquisition was announced via press release March 13. Atlanta healthcare media hasn't fully picked it up yet. There's still a story to tell and a window to tell it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section">
+      <div class="section-label">What We'd Build</div>
+      <h3>The 90-day Atlanta launch plan</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot active">30</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 1–30 · Digital Foundation & Retention</h4>
+            <p>Establish 26Health's Atlanta digital presence: Google Business Profile for the West Midtown practice, optimized for both the Optimal Integrative Care brand and 26Health parent branding. Critical SEO setup for "LGBTQ doctor Atlanta," "HIV specialist Atlanta Midtown," "primary care West Midtown," and infectious disease keywords. Audit and optimize existing Optimal social accounts (Instagram @oic.atl, Facebook). Launch patient retention communications — existing Optimal patients need to feel reassured and welcomed by their new parent organization.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">60</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 31–60 · Community Brand Launch</h4>
+            <p>PR pitch to Atlanta Business Chronicle, Atlanta Journal-Constitution, Creative Loafing, and local LGBTQ+ media outlets about 26Health's mission-driven expansion into Atlanta. Launch community partnership outreach to Atlanta LGBTQ+ organizations: Lost-N-Found Youth, Lost-N-Found, AID Atlanta, and Positive Impact Health Centers. Build 26Health's Atlanta-specific content program: patient stories, provider spotlights, health equity content tailored to the Atlanta market. Review management program to build Healthgrades and Google review velocity.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">90</div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 61–90 · New Patient Acquisition</h4>
+            <p>Launch targeted paid campaigns for new patient acquisition — Google Local Ads for primary care, Instagram ads for LGBTQ+ health services in Atlanta. Referral network development with Atlanta-area primary care physicians, social workers, and community health workers who refer to infectious disease and integrative care specialists. Full analytics dashboard and campaign reporting. Complete playbook for 26Health's communications team to maintain the program independently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section">
+      <div class="section-label">The Offer</div>
+      <div class="offer-box">
+        <h3>Atlanta Brand Launch Sprint — Start now</h3>
+        <p>90-day engagement to establish 26Health's presence in the Atlanta market.</p>
+        <ul>
+          <li>Google Business Profile setup and optimization (West Midtown practice)</li>
+          <li>Local SEO for LGBTQ+, HIV, primary care, and infectious disease keywords</li>
+          <li>PR pitch to Atlanta healthcare and LGBTQ+ media</li>
+          <li>Community partnership outreach (LGBTQ+ orgs, health equity advocates)</li>
+          <li>Dual-brand social content calendar (Optimal brand + 26Health parent brand)</li>
+          <li>Patient retention communications for existing Optimal patients</li>
+          <li>Review management program (Google + Healthgrades)</li>
+          <li>New patient acquisition campaigns (Google + Instagram)</li>
+          <li>Weekly performance reporting — full transparency on what's building</li>
+        </ul>
+        <div class="offer-price">$4,500–$7,000/month · 90-day sprint or ongoing retainer</div>
+      </div>
+      <p style="margin-top:12px; font-size:13px; color:#64748b;">In primary care, a new patient is worth $1,200–$2,500 in lifetime revenue. The Atlanta LGBTQ+ community represents thousands of potential patients who actively seek inclusive, affirming care. Getting in front of them in Month 1 vs. Month 6 is the difference between building a waitlist and scrambling to fill a schedule.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section">
+      <div class="section-label">What Happens If They Wait</div>
+      <div class="warning">
+        <strong>The cost of a slow brand launch:</strong> The acquisition news is already 3 weeks old. Every week without a Google Business Profile, local SEO, or community outreach is a week of missed new patient inquiries — and a week where Atlanta's LGBTQ+ community doesn't know inclusive care just arrived in West Midtown. In healthcare, first mover advantage in local search is hard to reverse once competitors entrench. And Emory, Piedmont, and established primary care groups are not standing still.
+      </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section">
+      <div class="section-label">Ready-to-Send Outreach</div>
+      <h3>Send this to Lenworth Kiese — VP of Communications</h3>
+      <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Lenworth Kiese is the VP of Communications at 26Health — he's the media/comms contact on the acquisition press release and the direct marketing decision-maker. Reach him at lenworth.kiese@26health.org or 321-800-2922 x1121. CEO Latrice Stewart (latrice.stewart@26health.org) is the strategic endorser.</p>
+
+      <div class="email-box">
+        <div class="email-field"><strong>Subject:</strong> 26Health just entered Atlanta — here's what the first 90 days needs to look like</div>
+        <div class="email-field"><strong>To:</strong> Lenworth Kiese — lenworth.kiese@26health.org</div>
+        <div class="email-field"><strong>From:</strong> dave@taptico.com</div>
+        <div class="email-divider"></div>
+        <div class="email-body">
+          <p>Lenworth,</p>
+          <p>Saw the March 13 announcement about 26Health acquiring Optimal Integrative Care in West Midtown — the inclusive care model Atlanta's LGBTQ+ community has needed for years, and now you're here.</p>
+          <p>Taptico builds market entry and local brand programs for healthcare organizations coming into Atlanta for the first time. Right now, 26Health has zero Atlanta digital presence, zero local SEO, and a patient community that doesn't yet know you're the parent organization behind their care. We put together a 90-day plan covering local brand launch, LGBTQ+ community marketing, review management for Optimal, and how to get "26Health Atlanta" ranking for the searches that matter most.</p>
+          <p>The plan is yours regardless of what you decide.</p>
+          <p>Would love to send it over — or 15 minutes on a call to walk through it works too.</p>
+          <p>Dave Clapper<br>dave@taptico.com<br>Taptico Solutions</p>
+        </div>
+      </div>
+
+      <div class="highlight" style="margin-top:16px;">
+        <p><strong>Alternative entry point:</strong> Call the Optimal Integrative Care practice at 404-352-1223 and ask for the Practice Manager. The local Atlanta staff will be making vendor recommendations to 26Health Orlando — getting on their radar at the ground level is a parallel path worth pursuing.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · March 2026<br>
+    Prepared for 26Health / Optimal Integrative Care · Confidential — not for external distribution
+  </div>
+
+</div>
+</body>
+</html>
