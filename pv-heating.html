@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PV Heating, Cooling & Plumbing — 90-Day Growth Marketing Plan</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
+  .prepared-by { text-align: right; }
+  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
+  .prepared-by strong { color: #fff; font-size: 13px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
+  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; }
+  .header-meta { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
+  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+
+  /* BODY */
+  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+
+  /* SECTION */
+  .section { margin-bottom: 36px; }
+  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
+  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
+  p strong { color: #1e293b; }
+
+  /* HIGHLIGHT BOX */
+  .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+  .highlight p { margin: 0; font-size: 14px; color: #1e3a5f; }
+
+  /* SIGNAL CARDS */
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
+  .signal-icon { font-size: 22px; margin-bottom: 8px; }
+  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+
+  /* TIMELINE */
+  .timeline { margin: 16px 0; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .timeline-dot.active { background: #3b82f6; }
+  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
+  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
+  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+
+  /* OFFER BOX */
+  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
+  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
+  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
+  .offer-box ul { margin: 0; padding-left: 20px; }
+  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
+  .offer-price { display: inline-block; background: #3b82f6; color: #fff; padding: 8px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; margin-top: 16px; }
+
+  /* EMAIL TEMPLATE */
+  .email-box { background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 24px 28px; }
+  .email-field { margin-bottom: 8px; font-size: 13px; color: #475569; }
+  .email-field strong { color: #0a1628; width: 70px; display: inline-block; }
+  .email-divider { height: 1px; background: #e2e8f0; margin: 14px 0; }
+  .email-body p { font-size: 14px; line-height: 1.8; color: #334155; margin: 0 0 14px 0; }
+
+  /* WARNING */
+  .warning { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: #9a3412; }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+
+  @media(max-width: 600px) {
+    .signal-grid { grid-template-columns: 1fr; }
+    .header { padding: 24px; }
+    .body { padding: 24px; }
+    .header-top { flex-direction: column; gap: 12px; }
+    .prepared-by { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">T</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">March 2026 · Confidential</p>
+      </div>
+    </div>
+    <h1>PV Heating, Cooling & Plumbing<br>90-Day Growth Marketing Plan</h1>
+    <h2>A strategic brief built for Atlanta's #1 family-owned HVAC & plumbing company — before spring peak season hits</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>📍</span>Atlanta, GA</div>
+      <div class="meta-chip"><span>👨‍👨‍👦</span>Family-Owned, 3 Brothers</div>
+      <div class="meta-chip"><span>⭐</span>2025 Carrier President's Award</div>
+      <div class="meta-chip"><span>⚡</span>New plumbing line + spring AC season — now</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- SECTION 1 -->
+    <div class="section">
+      <div class="section-label">The Situation</div>
+      <h3>What's happening at PV right now</h3>
+      <p>PV Heating, Cooling & Plumbing is 17 years into building one of Atlanta's most trusted home services brands. Three brothers — David, Jason, and Joe Peavey — built PV around engineering-driven diagnostics and zero-compromise quality. The results speak: <strong>5,000+ Priority Plan members, 3,000+ combined reviews at 4.9 stars, and the 2025 Carrier® President's Award</strong> — top 1% of dealers nationwide.</p>
+      <p>But something big just changed. PV recently expanded into full plumbing services, adding "& Plumbing" to the official brand. That's a smart growth move — and it's also a marketing challenge. You now compete on two fronts in a city where PE-backed operators like Coolray outspend family-owned companies 10-to-1.</p>
+
+      <div class="highlight">
+        <p><strong>The real question isn't whether PV needs better marketing.</strong> The question is whether spring AC season — the biggest revenue window of the year — arrives before your new plumbing line has any digital presence. Right now, that clock is running.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+      <div class="section-label">Why This Moment</div>
+      <h3>Four signals that make now the right time</h3>
+      <div class="signal-grid">
+        <div class="signal-card hot">
+          <div class="signal-icon">🔥</div>
+          <h4>New plumbing line just launched</h4>
+          <p>New service vertical = new SEO battleground. Your plumbing pages are competing against operators who've owned those keywords for years.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">🌡️</div>
+          <h4>Spring HVAC season is weeks away</h4>
+          <p>Atlanta AC season peaks April–June. Operators who set up demand gen in April win the summer. Those who wait lose it.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">👥</div>
+          <h4>5,000 Priority Plan members sitting idle</h4>
+          <p>You have the most valuable asset in home services — a pre-qualified customer list — and no email/SMS program activating it.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">🏆</div>
+          <h4>Carrier President's Award = marketing ammunition</h4>
+          <p>Top 1% of dealers nationwide. That's a competitive differentiator most Atlanta homeowners have never heard about. We fix that.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section">
+      <div class="section-label">What We'd Build</div>
+      <h3>The 90-day plan PV needs</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot active">30</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 1–30 · Foundation & Visibility</h4>
+            <p>Audit and optimize Google Business Profile for both HVAC and plumbing categories. Establish baseline local SEO rankings for "Atlanta HVAC," "Atlanta plumbing," and top service-area ZIP codes. Fix citation inconsistencies across directories. Launch review generation program (fastest ROI move in home services — you already have the 4.9-star rating, let's amplify it). Set up call tracking to know exactly which channels are driving calls today.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">60</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 31–60 · Demand Generation</h4>
+            <p>Launch Google Local Service Ads (LSA) for both HVAC and plumbing — the verified badge that pushes PV to the absolute top of local search. Build plumbing-specific landing pages optimized for Atlanta service areas. Stand up a seasonal demand calendar so your spring AC campaigns are live before homeowners start searching, not after. Begin content targeting energy rebates, heat pump guides, and water heater topics PV already owns expertise in.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">90</div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 61–90 · Activate the Member List</h4>
+            <p>Email and SMS re-engagement campaign to PV's 5,000+ Priority Plan members — the fastest and highest-ROI marketing move available to any home services company. A single well-timed seasonal campaign to your existing customer base typically outperforms any paid acquisition channel. Plus: full analytics dashboard, competitive rank tracking, and a playbook for PV's team to maintain momentum independently if they choose.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section">
+      <div class="section-label">The Offer</div>
+      <div class="offer-box">
+        <h3>The Dating Phase — Start before spring season</h3>
+        <p>90-day engagement to prove the model before any long-term commitment.</p>
+        <ul>
+          <li>Google Business Profile optimization for HVAC + plumbing categories</li>
+          <li>Local SEO audit and remediation across Atlanta service areas</li>
+          <li>Google Local Service Ads setup and management (both verticals)</li>
+          <li>Plumbing landing pages and service area content</li>
+          <li>Review velocity program to maintain 4.9-star momentum</li>
+          <li>Priority Plan member email/SMS campaign (highest ROI move)</li>
+          <li>Seasonal demand calendar (spring/summer AC + plumbing peaks)</li>
+          <li>Weekly performance reporting — you see exactly what's working</li>
+        </ul>
+        <div class="offer-price">$4,500–$6,500/month · No long-term contract required</div>
+      </div>
+      <p style="margin-top:12px; font-size:13px; color:#64748b;">One well-run Google LSA campaign and a Priority Plan reactivation email typically pays for itself in the first month. In Atlanta HVAC, a single system replacement averages $8,000–$15,000. The math is very much in your favor.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section">
+      <div class="section-label">What Happens If They Wait</div>
+      <div class="warning">
+        <strong>The cost of waiting through spring:</strong> Atlanta homeowners start searching for HVAC service in earnest the first warm week of April. Operators with Google LSA badges and optimized GBPs capture those searches. Operators without them don't — and Coolray, Reliable, and Estes are all running at full speed. Every week without active demand gen during March and April is bookings that went to a competitor.
+      </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section">
+      <div class="section-label">Ready-to-Send Outreach</div>
+      <h3>Send this to Jason Peavey — Director of Sales and Marketing</h3>
+      <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Jason is the co-founder who owns marketing at PV. UGA grad, "20 Under 40" honoree from the Conditioned Air Association of Georgia. He's not a skeptic — he's a marketer who knows the gaps. Reach him at jason@pvhvac.com or via LinkedIn.</p>
+
+      <div class="email-box">
+        <div class="email-field"><strong>Subject:</strong> Before Atlanta's AC season hits — PV's 90-day marketing window</div>
+        <div class="email-field"><strong>To:</strong> Jason Peavey — jason@pvhvac.com</div>
+        <div class="email-field"><strong>From:</strong> dave@taptico.com</div>
+        <div class="email-divider"></div>
+        <div class="email-body">
+          <p>Hi Jason,</p>
+          <p>Saw that PV recently added full plumbing services to the brand — that's a smart expansion, but it also means you're now competing on two fronts right as spring HVAC season kicks off.</p>
+          <p>I built a 90-day growth plan specific to where PV is right now: plumbing local SEO from scratch, Google LSA for both verticals, and a Priority Plan reactivation campaign that could drive bookings from the 5,000 members you already have in your system. In Atlanta's home services market, the operators who win summer are the ones who get their demand gen running in April, not June.</p>
+          <p>The plan is yours regardless of what you decide — I'd rather show you what we'd actually do than pitch you on what we might do.</p>
+          <p>Can I send it over? Happy to walk through it in 15 minutes if that's easier.</p>
+          <p>Dave Clapper<br>dave@taptico.com<br>Taptico Solutions</p>
+        </div>
+      </div>
+
+      <div class="highlight" style="margin-top:16px;">
+        <p><strong>Pro tip:</strong> Attach this PDF as "PV_Heating_90Day_Plan_Taptico.pdf" so Jason sees the plan immediately. The subject line promises something — the attachment delivers it before he even has to ask.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="section">
+      <div class="section-label">Contact Research Path</div>
+      <h3>Who to reach and how</h3>
+      <p><strong>Primary:</strong> Jason Peavey (Co-Founder, Director of Sales & Marketing) — jason@pvhvac.com · UGA grad, "20 Under 40" CAAG honoree · LinkedIn: search "Jason Peavey PV Heating Atlanta"</p>
+      <p><strong>Backup:</strong> David Peavey (Co-Founder & CEO) — david@pvhvac.com · Final decision-maker on any vendor spend</p>
+      <p><strong>Phone play:</strong> Call 770-xxx-xxxx (main line on pvhvac.com), ask for Jason. Front desk is family-run — they'll connect you or tell you the best way to reach him.</p>
+      <p><strong>Apollo:</strong> Run pvhvac.com to confirm email format and pull direct contact info for the Peavey brothers.</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · March 2026<br>
+    Prepared for PV Heating, Cooling & Plumbing · Confidential — not for external distribution
+  </div>
+
+</div>
+</body>
+</html>
