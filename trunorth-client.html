@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TruNorth Pest Control — 90-Day Multi-Market Growth Plan</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+
+  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
+  .prepared-by { text-align: right; }
+  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
+  .prepared-by strong { color: #fff; font-size: 13px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
+  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; }
+  .header-meta { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
+  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+
+  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+
+  .section { margin-bottom: 36px; }
+  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
+  h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 6px 0; }
+  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
+  p strong { color: #1e293b; }
+
+  .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+  .highlight p { margin: 0; font-size: 14px; color: #1e3a5f; }
+
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
+  .signal-icon { font-size: 22px; margin-bottom: 8px; }
+  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+
+  .timeline { margin: 16px 0; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .timeline-dot.active { background: #3b82f6; }
+  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
+  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
+  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+
+  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
+  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
+  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
+  .offer-box ul { margin: 0; padding-left: 20px; }
+  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
+
+  .warning { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: #9a3412; }
+
+  .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .market-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; }
+  .market-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .market-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+  .market-card .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .status-dot.green { background: #22c55e; }
+  .status-dot.yellow { background: #f59e0b; }
+  .status-dot.red { background: #ef4444; }
+
+  .cta-box { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 12px; padding: 28px 32px; margin: 16px 0; text-align: center; }
+  .cta-box h3 { color: #14532d; margin: 0 0 8px 0; }
+  .cta-box p { color: #166534; margin: 0 0 16px 0; font-size: 14px; }
+  .cta-btn { display: inline-block; background: #1a3a6b; color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 700; }
+
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+
+  @media(max-width: 600px) {
+    .signal-grid, .market-grid { grid-template-columns: 1fr; }
+    .header { padding: 24px; }
+    .body { padding: 24px; }
+    .header-top { flex-direction: column; gap: 12px; }
+    .prepared-by { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">T</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">April 2026</p>
+      </div>
+    </div>
+    <h1>TruNorth Pest Control<br>90-Day Multi-Market Growth Plan</h1>
+    <h2>A strategic brief for a family-owned pest control operator expanding across Georgia and Florida — and what it takes to win every market you enter</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>📍</span>Atlanta · Middle GA · Panama City · Orlando</div>
+      <div class="meta-chip"><span>🌿</span>Family-Owned · Eco-Friendly</div>
+      <div class="meta-chip"><span>📈</span>Active Expansion — Aug 2025</div>
+      <div class="meta-chip"><span>⚡</span>4 Markets. Built to Win.</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- SECTION 1: THE GROWTH STORY -->
+    <div class="section">
+      <div class="section-label">The Growth Story</div>
+      <h3>TruNorth built something real. Now the marketing needs to match.</h3>
+      <p>Tony Carder and the Carder family built TruNorth Pest Control from a single-market operation into a 4-location, multi-state company in roughly five years. They did it the right way — eco-friendly practices, free inspections, community-first service, and a genuine commitment to the families and businesses they protect. In August 2025, they formally announced expansion across Georgia and Florida. New locations are opening. Hiring is active. The operation is scaling.</p>
+      <p><strong>The problem isn't the business. The business is working.</strong> The problem is that every new market TruNorth enters, the brand starts from zero digitally. No Google Business Profile optimized for that city. No Local Service Ads running. No local SEO content. No review velocity strategy. The right people can't find you — and Terminix has been running ads in those markets for 20 years.</p>
+      <div class="highlight">
+        <p><strong>Tony Carder, CEO — August 2025:</strong> "Our expansion is about more than just growing our footprint. It is about serving families and businesses where they need us most. We understand the environments of Georgia and Florida, and we know the specific pest pressures people face here."</p>
+      </div>
+      <p>That's the right mission. This plan is how the right people find it.</p>
+    </div>
+
+    <!-- SECTION 2: MARKET STATUS -->
+    <div class="section">
+      <div class="section-label">Current Market Footprint</div>
+      <h3>4 markets. Not all of them visible online yet.</h3>
+      <div class="market-grid">
+        <div class="market-card">
+          <div class="signal-icon">🏙️</div>
+          <h4>Metro Atlanta / Peachtree City</h4>
+          <p><span class="status-dot yellow"></span><strong>Partial:</strong> Website exists, some GBP presence, Facebook active. Needs LSA, review velocity, and paid local ads.</p>
+        </div>
+        <div class="market-card">
+          <div class="signal-icon">🌲</div>
+          <h4>Middle Georgia (Warner Robins)</h4>
+          <p><span class="status-dot red"></span><strong>Minimal:</strong> Office open, digital presence near zero for this market. No city-specific pages or reviews visible.</p>
+        </div>
+        <div class="market-card">
+          <div class="signal-icon">🏖️</div>
+          <h4>Panama City Beach, FL</h4>
+          <p><span class="status-dot red"></span><strong>Invisible:</strong> Brand new market. Terminix, Orkin, and local FL operators are already established. TruNorth is starting cold.</p>
+        </div>
+        <div class="market-card">
+          <div class="signal-icon">🌴</div>
+          <h4>Orlando Area, FL</h4>
+          <p><span class="status-dot red"></span><strong>Invisible:</strong> Same story as Panama City. New territory, zero digital footprint, massive competitive market.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: THE REAL PROBLEM -->
+    <div class="section">
+      <div class="section-label">The Core Problem</div>
+      <h3>The operators winning home services in 2026 aren't the biggest — they're the best-found.</h3>
+      <p>Terminix has a $400M+ marketing budget. Orkin has been running Google Ads since 2003. Hawx Pest Control is PE-backed with dedicated growth teams in every market. They don't beat TruNorth on quality, on care, or on community trust. They beat them on discoverability.</p>
+      <p>When a homeowner in Warner Robins Googles "pest control near me" at 9pm on a Tuesday, they see Google Local Service Ads at the top of the page. Those aren't TruNorth listings yet. They're Terminix. They're Hawx. The homeowner never gets to the part where TruNorth's eco-friendly, family-owned story would win them over — because they already booked the other guy.</p>
+      <div class="warning">
+        <strong>The cost of waiting:</strong> Pest control is a recurring revenue business. The customer who books a competitor's annual plan in April stays on that plan. Every week without LSA and local SEO in each market is customer lifetime value permanently going to someone else. In home services, first-to-digital wins the market. TruNorth has the better product — they just need to be findable.
+      </div>
+    </div>
+
+    <!-- SECTION 4: 90-DAY PLAN -->
+    <div class="section">
+      <div class="section-label">The 90-Day Growth Plan</div>
+      <h3>Three phases. Four markets. One system TruNorth owns forever.</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot active">1</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 1–30: Build the Foundation Across All 4 Markets</h4>
+            <p>Audit and optimize Google Business Profiles for every TruNorth location. Launch Google Local Service Ads (LSA) — the verified badge that puts TruNorth at the absolute top of local search — in Atlanta/Peachtree City, Warner Robins, Panama City, and Orlando. Build city-specific landing pages on trunorthpest.com targeting high-intent search terms: "pest control [city]," "termite treatment [city]," "mosquito control [city]." Launch a review velocity sprint — systematic outreach to past customers to build Google review count in each market. Review count and recency are the #1 LSA ranking factor.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 31–60: Launch the Brand Story in New Markets</h4>
+            <p>In Florida and Middle Georgia, TruNorth is unknown. Phase 2 is brand awareness: targeted Facebook/Instagram ads in Panama City and Orlando introducing TruNorth as the eco-friendly, family-owned alternative to the national chains. Community partnership outreach to local HOAs, property managers, and commercial property owners. Social media content strategy built around TruNorth's story — the eco-friendly mission, the family ownership, the "we live here" angle that Terminix can never authentically tell. PR pitch to local market media about TruNorth's Georgia-to-Florida expansion story.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">3</div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 61–90: Activate the Recurring Revenue Engine</h4>
+            <p>Pest control's real money is in recurring plans — annual contracts, quarterly treatments, termite bonds. Phase 3 turns TruNorth's existing customer base into a retention + upsell machine. Email and SMS sequences for current customers: pre-season reminders, mosquito season alerts, termite inspection offers. Referral program launch — incentivize existing customers to refer neighbors (works especially well in HOA-heavy Atlanta suburbs). Commercial vertical content: targeted outreach to restaurants, property managers, HOAs, and healthcare facilities in each market. Analytics dashboard and monthly reporting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: THE OFFER -->
+    <div class="section">
+      <div class="section-label">What Taptico Delivers</div>
+      <div class="offer-box">
+        <h3>The TruNorth Multi-Market Growth System</h3>
+        <p>Everything TruNorth needs to dominate local search across 4 markets and build recurring revenue from the customer base they've already earned.</p>
+        <ul>
+          <li>Google Local Service Ads setup and management (all 4 markets)</li>
+          <li>Google Business Profile audit + optimization per location</li>
+          <li>City-specific landing pages for all service areas</li>
+          <li>Review velocity sprint (Google + Yelp per market)</li>
+          <li>New market brand launch campaigns (FL + Middle GA)</li>
+          <li>Social media content strategy (eco-friendly / community angle)</li>
+          <li>Email + SMS retention sequences for existing customer base</li>
+          <li>Referral program design and launch</li>
+          <li>Commercial vertical outreach (HOAs, restaurants, property managers)</li>
+          <li>Monthly analytics dashboard + reporting</li>
+          <li>Repeatable market launch playbook TruNorth owns forever</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECTION 6: COMPETITIVE FRAMING -->
+    <div class="section">
+      <div class="section-label">Why TruNorth Wins When They're Found</div>
+      <h3>The big guys can outspend TruNorth. They can't out-trust them.</h3>
+      <div class="signal-grid">
+        <div class="signal-card">
+          <div class="signal-icon">🏢</div>
+          <h4>Terminix / Orkin</h4>
+          <p>National budgets, national brand. But impersonal, corporate, high complaint volume. Homeowners increasingly want local operators who actually show up.</p>
+        </div>
+        <div class="signal-card hot">
+          <div class="signal-icon">🌿</div>
+          <h4>TruNorth's Edge</h4>
+          <p>Family-owned. Eco-friendly. Community-connected. An authentic brand voice that national chains can never replicate. This story wins — when people can find it.</p>
+        </div>
+        <div class="signal-card">
+          <div class="signal-icon">💰</div>
+          <h4>Hawx / PE-Backed Operators</h4>
+          <p>Growing fast with growth equity behind them. Running sophisticated digital playbooks. TruNorth needs the same infrastructure without the PE overhead.</p>
+        </div>
+        <div class="signal-card hot">
+          <div class="signal-icon">🎯</div>
+          <h4>Taptico's Job</h4>
+          <p>We build the marketing infrastructure that lets locally-owned operators compete — and win — against national chains. That's the whole business.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="section">
+      <div class="cta-box">
+        <h3>Ready to talk through it?</h3>
+        <p>This plan is yours to keep regardless of what you decide. If you want to walk through it in 15 minutes, we're ready when you are.</p>
+        <a href="mailto:dave@taptico.com" class="cta-btn">Reach Out to Dave →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · April 2026<br>
+    Prepared for TruNorth Pest Control
+  </div>
+
+</div>
+</body>
+</html>
