@@ -1,263 +1,698 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haven Services — Growth Marketing Strategy Build</title>
-<style>
-  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
-  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haven Services · Growth Strategy Build · Taptico Solutions</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* HEADER */
-  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
-  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
-  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
-  .prepared-by { text-align: right; }
-  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
-  .prepared-by strong { color: #fff; font-size: 13px; }
-  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
-  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; }
-  .header-meta { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
-  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
-  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #1e293b;
+      line-height: 1.6;
+    }
 
-  /* BODY */
-  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%);
+      color: #fff;
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: rgba(59,130,246,0.12);
+      border-radius: 50%;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 240px; height: 240px;
+      background: rgba(59,130,246,0.08);
+      border-radius: 50%;
+    }
+    .header-prepared {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      position: relative; z-index: 1;
+    }
+    .header h1 span { color: #3b82f6; }
+    .header-sub {
+      font-size: 18px;
+      color: #cbd5e1;
+      max-width: 620px;
+      margin: 0 auto 24px;
+      position: relative; z-index: 1;
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid rgba(59,130,246,0.4);
+      color: #93c5fd;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+      position: relative; z-index: 1;
+    }
 
-  /* SECTION */
-  .section { margin-bottom: 36px; }
-  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
-  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
-  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
-  p strong { color: #1e293b; }
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  /* HIGHLIGHT BOX */
-  .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
-  .highlight p { margin: 0; font-size: 14px; color: #1e3a5f; }
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    section:last-of-type { border-bottom: none; }
 
-  /* SIGNAL CARDS */
-  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
-  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
-  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
-  .signal-icon { font-size: 22px; margin-bottom: 8px; }
-  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
-  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #3b82f6;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 14px;
+      letter-spacing: -0.3px;
+    }
+    .section-intro {
+      font-size: 17px;
+      color: #475569;
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
 
-  /* TIMELINE */
-  .timeline { margin: 16px 0; }
-  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
-  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
-  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; flex-shrink: 0; }
-  .timeline-dot.active { background: #3b82f6; }
-  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
-  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
-  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
-  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+    /* ── SIGNAL CARDS ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .card-icon {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #64748b;
+    }
+    .card.accent {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+    }
+    .card.accent h3 { color: #1d4ed8; }
 
-  /* OFFER BOX */
-  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
-  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
-  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
-  .offer-box ul { margin: 0; padding-left: 20px; }
-  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
-  .offer-price { display: inline-block; background: #3b82f6; color: #fff; padding: 8px 20px; border-radius: 8px; font-size: 15px; font-weight: 700; margin-top: 16px; }
+    /* ── BUYING SIGNAL BANNER ── */
+    .signal-banner {
+      background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+      border-radius: 14px;
+      padding: 28px 32px;
+      color: #fff;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+    .signal-icon {
+      font-size: 30px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .signal-banner h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #93c5fd;
+      margin-bottom: 6px;
+    }
+    .signal-banner p {
+      font-size: 15px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    .signal-banner strong { color: #fff; }
 
-  /* EMAIL TEMPLATE */
-  .email-box { background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 24px 28px; }
-  .email-field { margin-bottom: 8px; font-size: 13px; color: #475569; }
-  .email-field strong { color: #0a1628; width: 70px; display: inline-block; }
-  .email-divider { height: 1px; background: #e2e8f0; margin: 14px 0; }
-  .email-body p { font-size: 14px; line-height: 1.8; color: #334155; margin: 0 0 14px 0; }
+    /* ── ROLLUP BRANDS ── */
+    .brand-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .brand-pill {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
 
-  /* WARNING */
-  .warning { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: #9a3412; }
+    /* ── TIMELINE ── */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -24px; top: 4px;
+      width: 14px; height: 14px;
+      background: #3b82f6;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #3b82f6;
+    }
+    .timeline-month {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #3b82f6;
+      margin-bottom: 4px;
+    }
+    .timeline-item h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .timeline-item p {
+      font-size: 14px;
+      color: #64748b;
+    }
+    .timeline-item ul {
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+    .timeline-item ul li {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
 
-  /* FOOTER */
-  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+    /* ── DELIVER LIST ── */
+    .deliver-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .deliver-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .deliver-check {
+      width: 24px; height: 24px;
+      background: #3b82f6;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .deliver-check svg {
+      width: 14px; height: 14px; fill: #fff;
+    }
+    .deliver-item h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .deliver-item p {
+      font-size: 13px;
+      color: #64748b;
+    }
 
-  @media(max-width: 600px) {
-    .signal-grid { grid-template-columns: 1fr; }
-    .header { padding: 24px; }
-    .body { padding: 24px; }
-    .header-top { flex-direction: column; gap: 12px; }
-    .prepared-by { text-align: left; }
-  }
-</style>
+    /* ── OFFER BOX ── */
+    .offer-box {
+      background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%);
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: rgba(59,130,246,0.15);
+      border-radius: 50%;
+    }
+    .offer-box .section-label { color: #93c5fd; }
+    .offer-box h2 {
+      color: #fff;
+      font-size: clamp(22px, 4vw, 34px);
+      margin-bottom: 14px;
+      position: relative; z-index: 1;
+    }
+    .offer-box h2 span { color: #60a5fa; }
+    .offer-box p {
+      color: #cbd5e1;
+      font-size: 16px;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      position: relative; z-index: 1;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #3b82f6;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: background 0.15s ease, transform 0.15s ease;
+      position: relative; z-index: 1;
+    }
+    .cta-btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+    .cta-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #64748b;
+      position: relative; z-index: 1;
+    }
+    .cta-note a { color: #93c5fd; text-decoration: none; }
+
+    /* ── STAT ROW ── */
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .stat-item {
+      flex: 1 1 160px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #3b82f6;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* ── GAP SECTION ── */
+    .gap-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    @media (max-width: 620px) {
+      .gap-split { grid-template-columns: 1fr; }
+    }
+    .gap-col {
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .gap-col.problem {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+    }
+    .gap-col.solution {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+    .gap-col h3 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .gap-col.problem h3 { color: #dc2626; }
+    .gap-col.solution h3 { color: #1d4ed8; }
+    .gap-col ul { padding-left: 18px; }
+    .gap-col ul li {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 8px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0a1628;
+      color: #475569;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+    }
+    .footer a { color: #60a5fa; text-decoration: none; }
+    .footer span { color: #1e3a5f; margin: 0 8px; }
+
+    @media (max-width: 600px) {
+      section { padding: 44px 0; }
+      .offer-box { padding: 36px 24px; }
+      .signal-banner { flex-direction: column; gap: 10px; }
+    }
+  </style>
 </head>
 <body>
-<div class="wrapper">
 
-  <div class="header">
-    <div class="header-top">
-      <div class="logo-mark">T</div>
-      <div class="prepared-by">
-        <p>Prepared by</p>
-        <strong>Taptico Solutions</strong>
-        <p style="margin-top:2px;">March 2026 · Confidential</p>
-      </div>
-    </div>
-    <h1>Haven Services<br>90-Day Growth Marketing Plan</h1>
-    <h2>A strategic brief prepared before your new Director of Digital Marketing starts</h2>
-    <div class="header-meta">
-      <div class="meta-chip"><span>📍</span>Columbus, Ohio</div>
-      <div class="meta-chip"><span>💰</span>$100M+ Revenue</div>
-      <div class="meta-chip"><span>🎯</span>$200M by 2031</div>
-      <div class="meta-chip"><span>⚡</span>Marketing leadership gap — now</div>
-    </div>
-  </div>
+  <!-- ══ HEADER ══ -->
+  <header class="header">
+    <div class="header-prepared">Prepared by Taptico Solutions · April 2026</div>
+    <h1>Haven Services:<br /><span>Growth Strategy Build</span></h1>
+    <p class="header-sub">A targeted engagement brief for Ohio's fastest-growing home services brand — and why now is the moment that matters.</p>
+    <div class="header-badge">🔥 High-Priority Opportunity · Cleveland → Statewide</div>
+  </header>
 
-  <div class="body">
+  <!-- ══ SECTION 1: GROWTH STORY ══ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Section 01 · Growth Story</div>
+      <h2>8 Brands. One Vision. Zero Playbook.</h2>
+      <p class="section-intro">Haven Services is a PE-backed home services rollup built in Ohio — and they just pulled off something most operators only dream about: unifying eight family-owned companies under a single brand in March 2026.</p>
 
-    <!-- SECTION 1 -->
-    <div class="section">
-      <div class="section-label">The Situation</div>
-      <h3>What's happening at Haven right now</h3>
-      <p>On March 11, 2026, Haven Services posted a Director of Digital Marketing & Customer Experience role. The salary range ($115K–$125K) signals one thing clearly: <strong>Haven has decided marketing is a priority and the budget is already allocated.</strong></p>
-      <p>A company targeting $200M in revenue by 2031 — doubling from current size — cannot afford 90–120 days of marketing stagnation while a new hire ramps up. Every week without a functioning digital marketing engine is pipeline that isn't building.</p>
-
-      <div class="highlight">
-        <p><strong>The real question isn't whether Haven needs better marketing.</strong> They've already answered that by posting the role. The question is whether a new hire — or an experienced partner — is the faster path to results.</p>
-      </div>
-    </div>
-
-    <!-- SECTION 2 -->
-    <div class="section">
-      <div class="section-label">Buying Signals</div>
-      <h3>Why this moment matters</h3>
-      <div class="signal-grid">
-        <div class="signal-card hot">
-          <div class="signal-icon">🔥</div>
-          <h4>Active hiring signal</h4>
-          <p>Director of Digital Marketing role posted March 11. Budget approved. Decision-maker has authority to spend.</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Legacy brands unified</div>
         </div>
-        <div class="signal-card">
-          <div class="signal-icon">📈</div>
-          <h4>Aggressive growth mandate</h4>
-          <p>$100M → $200M by 2031. They need a marketing engine, not a marketing experiment.</p>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Service categories</div>
         </div>
-        <div class="signal-card">
-          <div class="signal-icon">⏱️</div>
-          <h4>90-day ramp gap</h4>
-          <p>A new hire takes 60–90 days to ramp. The window where they need external support is right now.</p>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Ohio markets targeted</div>
         </div>
-        <div class="signal-card">
-          <div class="signal-icon">🏠</div>
-          <h4>Multi-trade complexity</h4>
-          <p>HVAC, plumbing, and electrical under one brand requires coordinated local SEO, review management, and demand gen — not one-size-fits-all campaigns.</p>
+        <div class="stat-item">
+          <div class="stat-number">Mar '26</div>
+          <div class="stat-label">Unified brand launch</div>
         </div>
       </div>
-    </div>
 
-    <!-- SECTION 3 -->
-    <div class="section">
-      <div class="section-label">What We'd Build</div>
-      <h3>The 90-day plan Haven needs</h3>
+      <p style="font-size:15px; color:#475569; margin-bottom:20px;">The companies that form Haven Services each built decades of local trust. Now unified under one roof, the opportunity is enormous — but so is the complexity. The brands that rolled up include:</p>
+
+      <div class="brand-list">
+        <span class="brand-pill">Heart of Ohio</span>
+        <span class="brand-pill">The Plumbing Source</span>
+        <span class="brand-pill">ESI Electrical</span>
+        <span class="brand-pill">+ 5 additional legacy brands</span>
+      </div>
+
+      <div class="cards-grid" style="margin-top:32px;">
+        <div class="card accent">
+          <div class="card-icon">🔧</div>
+          <h3>HVAC</h3>
+          <p>Heating, cooling, and air quality — the highest-ticket repeat service category in home services.</p>
+        </div>
+        <div class="card accent">
+          <div class="card-icon">🚿</div>
+          <h3>Plumbing</h3>
+          <p>Emergency and scheduled plumbing with legacy brand equity from The Plumbing Source and others.</p>
+        </div>
+        <div class="card accent">
+          <div class="card-icon">⚡</div>
+          <h3>Electrical</h3>
+          <p>Residential and light commercial electrical — ESI Electrical brings deep expertise.</p>
+        </div>
+        <div class="card accent">
+          <div class="card-icon">🪣</div>
+          <h3>Drain</h3>
+          <p>High-frequency service calls that build recurring customer relationships and LTV.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: MARKET OPPORTUNITY ══ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Section 02 · Market Opportunity</div>
+      <h2>Ohio Is a $2B+ Home Services Market. Haven Is Just Getting Started.</h2>
+      <p class="section-intro">Cleveland is live. Columbus, Dayton, and Cincinnati are in the expansion roadmap. The PE-backed rollup model only works if digital infrastructure scales with it — and right now, it doesn't.</p>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <h3>Cleveland (Live)</h3>
+          <p>First market activated under the Haven brand. Proof-of-concept underway — urgency is high to build a repeatable playbook now.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🗺️</div>
+          <h3>Columbus, Dayton, Cincinnati</h3>
+          <p>Three major Ohio metros are next. Each launch multiplies the brand alignment need and the lead gen requirement.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3>PE-Backed Scale Mandate</h3>
+          <p>Private equity doesn't fund rollups to stay local. Investors expect growth velocity — and that means digital infrastructure has to perform.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏆</div>
+          <h3>First-Mover Brand Moment</h3>
+          <p>The unified Haven brand is weeks old. The window to dominate Ohio's digital home services space is open — and it won't stay open forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3: THE GAP ══ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Section 03 · The Gap</div>
+      <h2>They Know They Have a Problem. The Job Listing Proves It.</h2>
+
+      <div class="signal-banner">
+        <div class="signal-icon">🎯</div>
+        <div>
+          <h3>Live Buying Signal Detected</h3>
+          <p>Haven Services is actively recruiting a <strong>Director of Digital Marketing</strong>. That's not a nice-to-have hire — it's a distress signal. They've unified 8 brands and they don't have a digital strategy to match. The search is live. <strong>The gap is open right now.</strong></p>
+        </div>
+      </div>
+
+      <div class="gap-split">
+        <div class="gap-col problem">
+          <h3>⚠️ Their Reality Today</h3>
+          <ul>
+            <li>8 legacy websites, 8 brand voices, no unified digital presence</li>
+            <li>Inconsistent local SEO across service areas and categories</li>
+            <li>No consolidated lead gen funnel — each brand still running in silos</li>
+            <li>Director of Digital Marketing search = 90+ day hiring timeline</li>
+            <li>Paid media spend fragmented across old brand accounts</li>
+            <li>No single customer acquisition system to show PE investors</li>
+          </ul>
+        </div>
+        <div class="gap-col solution">
+          <h3>✅ What Taptico Delivers</h3>
+          <ul>
+            <li>One unified digital brand voice — built from the ground up for Haven</li>
+            <li>Consolidated local SEO strategy across all 4 service categories</li>
+            <li>Single lead gen engine scalable to all 4 Ohio markets</li>
+            <li>Operational in 30 days — not 90. No recruiting. No onboarding lag.</li>
+            <li>Unified paid media strategy with clear attribution and ROI reporting</li>
+            <li>Investor-ready growth dashboard and customer acquisition reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:12px; padding:20px 24px; margin-top:28px;">
+        <p style="font-size:15px; color:#0369a1; font-weight:600;">⏱️ The Cost of Waiting: Every 30 days without a unified digital strategy = lost ground in Cleveland and delayed market entry in Columbus, Dayton, and Cincinnati. PE-backed timelines don't forgive slow starts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4: 90-DAY PLAN ══ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Section 04 · 90-Day Plan</div>
+      <h2>From 8 Brands to One Lead Machine. In 90 Days.</h2>
+      <p class="section-intro">While Haven waits 90 days to hire — and then another 30-60 days for a new director to get up to speed — Taptico is already executing. Here's what the next 90 days look like when we work together.</p>
+
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-left">
-            <div class="timeline-dot active">30</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-right">
-            <h4>Days 1–30 · Foundation & Visibility</h4>
-            <p>Audit and fix all Google Business Profiles across Haven's locations. Establish baseline local SEO rankings for "Columbus HVAC," "Columbus plumbing," "Columbus electrician" and top service-area keywords. Fix citation inconsistencies. Launch review generation program (the fastest ROI move in home services). Set up call tracking so we know which channels are driving calls today.</p>
-          </div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-month">Days 1–30 · Foundation</div>
+          <h3>Brand Audit + Digital Infrastructure</h3>
+          <ul>
+            <li>Full digital audit of all 8 legacy brand properties</li>
+            <li>Unified Haven brand standards applied across web, social, and paid</li>
+            <li>Google Business Profile consolidation and local SEO foundation</li>
+            <li>Single lead capture system deployed for Cleveland market</li>
+          </ul>
         </div>
         <div class="timeline-item">
-          <div class="timeline-left">
-            <div class="timeline-dot">60</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-right">
-            <h4>Days 31–60 · Demand Generation</h4>
-            <p>Launch targeted Google Local Service Ads (LSA) for HVAC, plumbing, and electrical. Build location-specific landing pages. Stand up a seasonal demand calendar (HVAC peaks spring and fall — we need campaigns ready before the season, not during it). Begin content strategy targeting local homeowners with service-specific educational content.</p>
-          </div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-month">Days 31–60 · Activation</div>
+          <h3>Lead Gen Engine Goes Live</h3>
+          <ul>
+            <li>Paid media campaigns live across HVAC, plumbing, electrical, drain</li>
+            <li>Retargeting and local audience build — Cleveland focused</li>
+            <li>Content strategy and social presence unified under Haven brand</li>
+            <li>Columbus market pre-launch groundwork begins</li>
+          </ul>
         </div>
         <div class="timeline-item">
-          <div class="timeline-left">
-            <div class="timeline-dot">90</div>
-          </div>
-          <div class="timeline-right">
-            <h4>Days 61–90 · Scale & Handoff</h4>
-            <p>Email/SMS re-engagement campaign for Haven's existing customer base (fastest revenue recovery play in home services). Full analytics dashboard built and running. If Haven hires a Director in this window, Taptico transitions from full execution to senior advisory — we don't disappear, we become the strategic layer behind their internal team.</p>
-          </div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-month">Days 61–90 · Scale</div>
+          <h3>Expand, Optimize, Repeat</h3>
+          <ul>
+            <li>Columbus market launch with full digital playbook</li>
+            <li>Performance reporting dashboard delivered to leadership + investors</li>
+            <li>Dayton and Cincinnati pre-launch strategy locked</li>
+            <li>Scalable playbook documented for every future market entry</li>
+          </ul>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- SECTION 4 -->
-    <div class="section">
-      <div class="section-label">The Offer</div>
+  <!-- ══ SECTION 5: WHAT TAPTICO DELIVERS ══ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Section 05 · What Taptico Delivers</div>
+      <h2>The Full Stack. Not Just a Slice.</h2>
+      <p class="section-intro">Taptico isn't an agency vendor. We're the digital growth team Haven needs right now — without the 90-day hiring delay, the benefits package, or the onboarding friction.</p>
+
+      <div class="deliver-grid">
+        <div class="deliver-item">
+          <div class="deliver-check"><svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l6.879-6.879a1 1 0 011.414 0z"/></svg></div>
+          <div>
+            <h4>Unified Brand System</h4>
+            <p>One voice, one visual identity, one message — across all channels and all markets.</p>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <div class="deliver-check"><svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l6.879-6.879a1 1 0 011.414 0z"/></svg></div>
+          <div>
+            <h4>Local SEO Dominance</h4>
+            <p>Rank in every service area across every Ohio market — HVAC, plumbing, electrical, drain.</p>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <div class="deliver-check"><svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l6.879-6.879a1 1 0 011.414 0z"/></svg></div>
+          <div>
+            <h4>Paid Media Management</h4>
+            <p>Google Local Services Ads, search, and display — built for home services lead gen, not vanity metrics.</p>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <div class="deliver-check"><svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l6.879-6.879a1 1 0 011.414 0z"/></svg></div>
+          <div>
+            <h4>Website & Conversion Optimization</h4>
+            <p>Legacy brand sites consolidated and optimized for Haven — fast, mobile-first, lead-converting.</p>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <div class="deliver-check"><svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l6.879-6.879a1 1 0 011.414 0z"/></svg></div>
+          <div>
+            <h4>Market Expansion Playbook</h4>
+            <p>Repeatable market-entry system built for Columbus, Dayton, and Cincinnati — launch faster every time.</p>
+          </div>
+        </div>
+        <div class="deliver-item">
+          <div class="deliver-check"><svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.172l6.879-6.879a1 1 0 011.414 0z"/></svg></div>
+          <div>
+            <h4>Investor-Ready Reporting</h4>
+            <p>Clean dashboards showing CAC, lead volume, and market performance — the language PE investors speak.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:40px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:24px 28px;">
+        <p style="font-size:14px; color:#475569; font-style:italic;">"Haven doesn't need another agency on a retainer. They need a growth partner who understands the rollup model, moves at PE speed, and can build a digital machine that scales from Cleveland to every Ohio market on their roadmap. That's Taptico."</p>
+        <p style="font-size:13px; color:#94a3b8; margin-top:10px; font-weight:600;">— Dave Clapper, Partner · Taptico Solutions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA / OFFER BOX ══ -->
+  <section style="border-bottom:none; padding: 60px 0;">
+    <div class="container">
       <div class="offer-box">
-        <h3>The Dating Phase — Start in two weeks</h3>
-        <p>90-day engagement to prove the model before any long-term commitment.</p>
-        <ul>
-          <li>Full local SEO audit and remediation (all Haven locations)</li>
-          <li>Google Business Profile optimization and review velocity program</li>
-          <li>Google Local Service Ads setup and management</li>
-          <li>Call tracking and attribution reporting</li>
-          <li>Seasonal demand calendar for HVAC, plumbing, and electrical</li>
-          <li>Weekly performance reporting — you see exactly what's working</li>
-          <li>Senior strategist available when the new Director comes on board</li>
-        </ul>
-        <div class="offer-price">$5,000–$7,500/month · No long-term contract required</div>
-      </div>
-      <p style="margin-top:12px; font-size:13px; color:#64748b;">Compare that to $125K salary + benefits + 90-day ramp. Even a 3-month engagement at the top of our range is roughly what Haven would spend on one month of a Director's fully-loaded cost.</p>
-    </div>
-
-    <!-- SECTION 5 -->
-    <div class="section">
-      <div class="section-label">What Happens If They Wait</div>
-      <div class="warning">
-        <strong>The cost of the hiring window:</strong> Every week without a functioning demand gen program is a week of missed calls. In multi-trade home services, a single HVAC job averages $1,200–$3,500. A well-run local SEO + LSA program typically drives 15–40 incremental calls per month per location. For a company with multiple locations targeting $200M, the math is straightforward.
+        <div class="section-label">Let's Build This</div>
+        <h2>The Window Is <span>Open Right Now.</span></h2>
+        <p>Haven Services just launched a unified brand, is actively hiring digital leadership, and is expanding across Ohio. The timing doesn't get better than this. Let's get on a call and show Jesse Warren and the Haven team exactly what we can build — and how fast.</p>
+        <a href="mailto:dave@taptico.com?subject=Haven%20Services%20%E2%80%94%20Strategy%20Call&body=Hi%20Dave%2C%20I%20reviewed%20the%20Haven%20Services%20strategy%20build%20and%20I%27d%20like%20to%20connect." class="cta-btn">📬 Let's Talk · dave@taptico.com</a>
+        <p class="cta-note">Or visit <a href="https://tapticosolutions.com" target="_blank">tapticosolutions.com</a> to learn more about how we work.</p>
       </div>
     </div>
+  </section>
 
-    <!-- SECTION 6 -->
-    <div class="section">
-      <div class="section-label">Ready-to-Send Outreach</div>
-      <h3>Send this to their hiring decision-maker</h3>
-      <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Find the CEO/Owner via havenservices.com or search "Haven Services LLC Ohio" on LinkedIn. Also look for "The Plumbing Source" and "Heart of Ohio" — same ownership group.</p>
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <p>Taptico Solutions<span>·</span><a href="mailto:dave@taptico.com">dave@taptico.com</a><span>·</span><a href="https://tapticosolutions.com" target="_blank">tapticosolutions.com</a><span>·</span>April 2026</p>
+    <p style="margin-top:8px; font-size:11px; color:#1e3a5f;">Confidential. Prepared for Haven Services. Not for redistribution.</p>
+  </footer>
 
-      <div class="email-box">
-        <div class="email-field"><strong>Subject:</strong> We built Haven's 90-day marketing plan — before your Director starts</div>
-        <div class="email-field"><strong>To:</strong> [CEO/Owner Name] — havenservices.com</div>
-        <div class="email-field"><strong>From:</strong> dave@taptico.com</div>
-        <div class="email-divider"></div>
-        <div class="email-body">
-          <p>Hi [First Name],</p>
-          <p>Saw the Director of Digital Marketing role go up on March 11. Before you fill it, I put together a 90-day growth marketing plan for Haven — not a proposal, just a real plan showing what we'd do in the first three months to move the needle toward your $200M target.</p>
-          <p>It covers local SEO, Google LSA, review velocity, demand gen for HVAC/plumbing/electrical, and what a seasonal campaign calendar looks like before spring peak season.</p>
-          <p>The plan is yours regardless of what you decide. I'd rather show you what we're capable of than tell you about it.</p>
-          <p>Can I send it over? Or if you'd rather talk through it — 15 minutes on your calendar and I'll walk you through everything.</p>
-          <p>Dave Clapper<br>dave@taptico.com<br>Taptico Solutions</p>
-        </div>
-      </div>
-
-      <div class="highlight" style="margin-top:16px;">
-        <p><strong>Pro tip:</strong> Attach this PDF as "Haven_90Day_Plan_Taptico.pdf" so they see the plan the moment they open the email. The subject line promises something — the attachment delivers it.</p>
-      </div>
-    </div>
-
-    <!-- SECTION 7 -->
-    <div class="section">
-      <div class="section-label">Contact Research Path</div>
-      <h3>Finding the right person</h3>
-      <p>Haven Services LLC operates as Haven Services, The Plumbing Source, and Heart of Ohio. The CEO/Owner may be listed under any of these brands on LinkedIn.</p>
-      <p><strong>LinkedIn:</strong> Search "Haven Services LLC Ohio" → filter by CEO, President, Owner. <br>
-      <strong>Website:</strong> havenservices.com/about or /team<br>
-      <strong>Phone play:</strong> Call main line, ask for the person managing the Director of Digital Marketing search. Front desk will connect you or give a name.<br>
-      <strong>Apollo:</strong> Run domain havenservices.com to pull executive contacts and confirm email format.</p>
-    </div>
-
-  </div>
-
-  <div class="footer">
-    Taptico Solutions · dave@taptico.com · tapticosolutions.com · March 2026<br>
-    Prepared for Haven Services · Confidential — not for external distribution
-  </div>
-
-</div>
 </body>
 </html>
