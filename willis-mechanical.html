@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willis Mechanical — 90-Day Growth Marketing Plan</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
+  .prepared-by { text-align: right; }
+  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
+  .prepared-by strong { color: #fff; font-size: 13px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
+  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; }
+  .header-meta { display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
+  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+  .section { margin-bottom: 36px; }
+  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
+  h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 6px 0; }
+  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
+  p strong { color: #1e293b; }
+  .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+  .highlight p { margin: 0; font-size: 14px; color: #1e3a5f; }
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
+  .signal-card.green { border-color: #86efac; background: #f0fdf4; }
+  .signal-icon { font-size: 22px; margin-bottom: 8px; }
+  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+  .timeline { margin: 16px 0; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .timeline-dot.active { background: #3b82f6; }
+  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
+  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
+  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
+  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
+  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
+  .offer-box ul { margin: 0; padding-left: 20px; }
+  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
+  .warning { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: #9a3412; }
+  .verticals-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 16px 0; }
+  .vertical-chip { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px; text-align: center; font-size: 12px; font-weight: 600; color: #334155; }
+  .cta-box { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 12px; padding: 28px 32px; margin: 16px 0; text-align: center; }
+  .cta-box h3 { color: #14532d; margin: 0 0 8px 0; }
+  .cta-box p { color: #166534; margin: 0 0 16px 0; font-size: 14px; }
+  .cta-btn { display: inline-block; background: #1a3a6b; color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 700; }
+  .milestone-banner { background: linear-gradient(135deg, #1a3a6b, #2563eb); border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+  .milestone-banner h4 { color: #fff; font-size: 15px; font-weight: 800; margin: 0 0 4px 0; }
+  .milestone-banner p { color: #93c5fd; font-size: 13px; margin: 0; }
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+  @media(max-width: 600px) {
+    .signal-grid, .verticals-grid { grid-template-columns: 1fr; }
+    .header { padding: 24px; }
+    .body { padding: 24px; }
+    .header-top { flex-direction: column; gap: 12px; }
+    .prepared-by { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">W</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">April 2026</p>
+      </div>
+    </div>
+    <h1>Willis Mechanical<br>90-Day Growth Marketing Plan</h1>
+    <h2>A strategic brief for a 25-year Atlanta institution entering its next chapter — with a new generation of leadership and a marketing system that finally matches the reputation</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>📍</span>Atlanta, GA</div>
+      <div class="meta-chip"><span>🔧</span>Commercial HVAC/R · Plumbing · Piping</div>
+      <div class="meta-chip"><span>📅</span>25 Years · Founded 2002</div>
+      <div class="meta-chip"><span>🏆</span>Second-Gen Transition — 2025</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="section">
+      <div class="section-label">The Growth Story</div>
+      <h3>25 years of earned trust. A new generation ready to grow.</h3>
+      <p>Grant and Leticia Willis started Willis Mechanical in 2002 with a simple idea: do the work right, show up when it counts, and treat every client like they're your only client. That philosophy turned a startup contractor into one of Atlanta's most respected commercial mechanical firms — serving data centers, hospitals, military installations, schools, and manufacturing plants for over two decades.</p>
+      <p>In 2025, something significant happened: ownership officially transitioned to 100% second-generation leadership. The next chapter of Willis Mechanical is being written right now — by people who grew up in this business and have a vision for where it goes next.</p>
+
+      <div class="milestone-banner">
+        <h4>🏆 2025 Ownership Milestone</h4>
+        <p>First family. Second generation. Same commitment — with new ambition. This is the kind of company that wins in a PE-dominated market when people find them. The problem is making sure people find them.</p>
+      </div>
+
+      <p>Willis Mechanical still has their very first client. That's not a marketing talking point — that's proof of something most companies in this industry can't replicate. The goal of this plan is to make sure every business in Atlanta that needs what Willis offers can find them before they call anyone else.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Who They Serve</div>
+      <h3>The clients every commercial contractor wants. Willis already has them.</h3>
+      <div class="verticals-grid">
+        <div class="vertical-chip">🏥 Healthcare<br>& Surgery Centers</div>
+        <div class="vertical-chip">🖥️ Data Centers</div>
+        <div class="vertical-chip">🏭 Manufacturing</div>
+        <div class="vertical-chip">🏫 Schools &<br>Universities</div>
+        <div class="vertical-chip">⚖️ Government &<br>Military</div>
+        <div class="vertical-chip">⛪ Religious &<br>Community Orgs</div>
+      </div>
+      <p>These aren't just good clients. They're <strong>long-cycle, high-retention, high-value accounts</strong> that require trust, reliability, and technical depth. Willis has all three. The opportunity is making sure the right decision-makers in Atlanta know it.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The Core Problem</div>
+      <h3>The reputation is earned. The discoverability isn't there yet.</h3>
+      <p>In commercial HVAC and mechanical services, the big players — EMCOR, Johnson Controls, ABM Industries, ACCO Brands — have national marketing budgets and dedicated digital teams. They show up everywhere online. They run retargeting ads. They publish case studies. They appear at the top of every search.</p>
+      <p>Willis Mechanical wins on reputation, relationships, and results. But in a market where facility managers, property management companies, and procurement teams are increasingly doing digital research before they make a call, being hard to find online is the same as not existing.</p>
+
+      <div class="signal-grid">
+        <div class="signal-card hot">
+          <div class="signal-icon">📉</div>
+          <h4>The Discoverability Gap</h4>
+          <p>25 years of excellence with limited digital footprint. New clients who don't already know Willis are not finding them. The referral network is strong — but it has a ceiling.</p>
+        </div>
+        <div class="signal-card green">
+          <div class="signal-icon">⚡</div>
+          <h4>The Opportunity</h4>
+          <p>A family-owned story in a PE-consolidation market is a massive differentiator. Healthcare and data center clients want accountability — Willis offers it. That story needs to be visible.</p>
+        </div>
+        <div class="signal-card hot">
+          <div class="signal-icon">🏦</div>
+          <h4>PE Consolidation Risk</h4>
+          <p>EMCOR, ABM, and Comfort Systems are rolling up regional contractors. Every year, fewer independent commercial HVAC firms exist. Willis's independence is a feature — until it becomes a liability without the marketing to match.</p>
+        </div>
+        <div class="signal-card green">
+          <div class="signal-icon">🔄</div>
+          <h4>Second-Gen Window</h4>
+          <p>New ownership transition = new energy, new ambitions, and a fresh look at how Willis goes to market. This is the natural moment to build the marketing infrastructure the next 25 years requires.</p>
+        </div>
+      </div>
+
+      <div class="warning">
+        <strong>The cost of staying invisible:</strong> Every facility manager in Atlanta who Googles "commercial HVAC contractor Atlanta" and doesn't see Willis Mechanical is a potential long-term account going to a competitor. In commercial services, a single contract can be worth $50K–$500K+ over its lifetime. The marketing investment pays for itself with one new client.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The 90-Day Growth Plan</div>
+      <h3>Three phases. Built for a 25-year company entering its next chapter.</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot active">1</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 1–30: Build the Digital Foundation</h4>
+            <p>Google Business Profile audit and optimization. Local SEO for high-intent commercial search terms: "commercial HVAC contractor Atlanta," "data center cooling contractor Atlanta," "commercial plumbing Atlanta," and vertical-specific terms (healthcare HVAC, chiller maintenance, boiler service). LinkedIn company page built out with Willis's story, second-gen narrative, and client verticals. Website audit with SEO and conversion recommendations. Google Search Ads for priority verticals (data centers, healthcare) to capture in-market prospects now.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 31–60: Tell the Willis Story at Scale</h4>
+            <p>Content strategy built around what makes Willis different: family ownership, second-generation transition, 25 years of reliability, and technical depth that national chains can't match. Case study development — document 2–3 landmark projects (data center, healthcare, government) that demonstrate Willis's capabilities. LinkedIn thought leadership from the second-gen ownership team. Targeted LinkedIn outreach to facility managers, property management companies, and procurement officers in Atlanta. PR pitch to Atlanta Business Chronicle and local trade publications on the second-gen ownership story.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">3</div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 61–90: Build the Pipeline Engine</h4>
+            <p>Email nurture sequences for prospects and past clients: preventive maintenance reminders, seasonal HVAC alerts, new service announcements, and "have you met the new team?" introduction from second-gen leadership. Referral program launch — systematize the word-of-mouth that has driven Willis for 25 years. Retargeting ads to re-engage website visitors. Commercial vertical outreach packages: targeted campaigns to data center operators, healthcare facility managers, and property management companies in metro Atlanta. Monthly reporting dashboard tracking leads, conversions, and pipeline value.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">What Taptico Delivers</div>
+      <div class="offer-box">
+        <h3>The Willis Mechanical Growth System</h3>
+        <p>Everything Willis needs to convert 25 years of reputation into a modern lead generation engine — built for the next generation of leadership.</p>
+        <ul>
+          <li>Google Business Profile optimization + local SEO for commercial search terms</li>
+          <li>Google Search Ads for data center, healthcare, and government verticals</li>
+          <li>LinkedIn company page build-out + second-gen story content</li>
+          <li>Case study development (2–3 flagship client stories)</li>
+          <li>Targeted outreach to facility managers and property management companies</li>
+          <li>Email + LinkedIn nurture sequences for prospects and past clients</li>
+          <li>Referral program design and launch</li>
+          <li>PR pitch to Atlanta Business Chronicle + trade publications</li>
+          <li>Monthly analytics dashboard + pipeline reporting</li>
+          <li>Repeatable market expansion playbook Willis owns forever</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Ready to Talk?</div>
+      <div class="cta-box">
+        <h3>The next 25 years start now.</h3>
+        <p>This plan is yours to keep regardless of what you decide. If you want to walk through it in 15 minutes, we're ready when you are.</p>
+        <a href="mailto:dave@taptico.com?subject=Willis Mechanical — Growth Plan Discussion" class="cta-btn">Reach Out to Dave →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · April 2026<br>
+    Prepared for Willis Mechanical
+  </div>
+
+</div>
+</body>
+</html>
