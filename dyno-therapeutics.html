@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dyno Therapeutics — 90-Day Market Presence Plan</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
+  .prepared-by { text-align: right; }
+  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
+  .prepared-by strong { color: #fff; font-size: 13px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
+  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; }
+  .header-meta { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
+  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+  .section { margin-bottom: 36px; }
+  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
+  h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 6px 0; }
+  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
+  p strong { color: #1e293b; }
+  .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+  .highlight p { margin: 0; font-size: 14px; color: #1e3a5f; }
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
+  .signal-card.green { border-color: #86efac; background: #f0fdf4; }
+  .signal-card.blue { border-color: #93c5fd; background: #eff6ff; }
+  .signal-icon { font-size: 22px; margin-bottom: 8px; }
+  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+  .timeline { margin: 16px 0; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .timeline-dot.active { background: #3b82f6; }
+  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
+  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
+  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
+  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
+  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
+  .offer-box ul { margin: 0; padding-left: 20px; }
+  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
+  .milestone-banner { background: linear-gradient(135deg, #1a3a6b, #2563eb); border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+  .milestone-banner h4 { color: #fff; font-size: 15px; font-weight: 800; margin: 0 0 4px 0; }
+  .milestone-banner p { color: #93c5fd; font-size: 13px; margin: 0; }
+  .cta-box { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 12px; padding: 28px 32px; margin: 16px 0; text-align: center; }
+  .cta-box h3 { color: #14532d; margin: 0 0 8px 0; }
+  .cta-box p { color: #166534; margin: 0 0 16px 0; font-size: 14px; }
+  .cta-btn { display: inline-block; background: #1a3a6b; color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 700; }
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+  @media(max-width: 600px) {
+    .signal-grid { grid-template-columns: 1fr; }
+    .header { padding: 24px; }
+    .body { padding: 24px; }
+    .header-top { flex-direction: column; gap: 12px; }
+    .prepared-by { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">D</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">April 2026</p>
+      </div>
+    </div>
+    <h1>Dyno Therapeutics<br>90-Day Market Presence Plan</h1>
+    <h2>Roche deal. Frontiers Program. Trisk Bio partnership. Dyno is no longer just a research company — it's a platform. The communications strategy needs to keep pace with the science.</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>🧬</span>Gene Therapy AI Platform</div>
+      <div class="meta-chip"><span>💰</span>$109M Raised · a16z + Casdin</div>
+      <div class="meta-chip"><span>🤝</span>Roche, Sarepta, Novartis, Spark</div>
+      <div class="meta-chip"><span>📅</span>Frontiers Program Launched May 2025</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="section">
+      <div class="section-label">The Inflection Point</div>
+      <h3>Dyno just crossed from deep research to platform company. The market doesn't know it yet.</h3>
+      <p>Eric Kelsic and Adrian Veres built Dyno on a thesis that most people thought was too early: use AI to redesign the delivery systems for gene therapy, not just the genes themselves. That thesis was right — and the last 18 months proved it at a scale that changes everything.</p>
+      <p>In January 2025, Roche exercised its option on a next-generation AAV vector, signaling a potential $1B+ collaboration. In May 2025, Dyno launched the Frontiers Program, opening its AI-designed AAV platform to external developers. In November 2025, Trisk Bio became the first manufacturing partner in that program.</p>
+
+      <div class="milestone-banner">
+        <h4>🚀 Three Platform Milestones in 12 Months</h4>
+        <p>Roche option exercise (Jan 2025) → Frontiers Program launch (May 2025) → First manufacturing partnership (Nov 2025). This is the moment Dyno's story becomes a platform story — and platform stories need platform-level communications.</p>
+      </div>
+
+      <p>The challenge: Dyno's external communications still read like a research company. The website, LinkedIn presence, and media coverage are calibrated for scientific credibility — which matters — but they're not yet calibrated for the developer ecosystem, potential Frontiers partners, talent acquisition at scale, or the next institutional investors who will fund Series B.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The Buying Signals</div>
+      <h3>Four simultaneous triggers. Each one alone is worth a call.</h3>
+
+      <div class="signal-grid">
+        <div class="signal-card green">
+          <div class="signal-icon">🔬</div>
+          <h4>Roche Deal = Credibility at Scale</h4>
+          <p>A $1B+ Roche collaboration is the kind of validation that converts skeptics. Most companies in Dyno's position underuse this signal. It should be visible everywhere — LinkedIn, media, partner outreach.</p>
+        </div>
+        <div class="signal-card blue">
+          <div class="signal-icon">🌐</div>
+          <h4>Frontiers Program Needs a Funnel</h4>
+          <p>The Frontiers Program is a platform play — Dyno's AAV technology available to external gene therapy developers. That's a B2B product that needs inbound marketing, a clear value proposition, and a discoverable application process.</p>
+        </div>
+        <div class="signal-card green">
+          <div class="signal-icon">🏭</div>
+          <h4>Manufacturing Partnership = Ecosystem Story</h4>
+          <p>Trisk Bio as the first Frontiers manufacturing partner signals an ecosystem forming. That's a narrative worth telling publicly — to future partners, investors, and the broader gene therapy community.</p>
+        </div>
+        <div class="signal-card hot">
+          <div class="signal-icon">🎯</div>
+          <h4>Talent War in Biotech AI</h4>
+          <p>Dyno competes for talent against Recursion, Insilico Medicine, and every well-funded AI biotech. The employer brand — what it means to work at Dyno right now, at this inflection point — is a recruiting advantage that most companies don't build until it's too late.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The 90-Day Plan</div>
+      <h3>Three phases. Built for a company at the platform inflection point.</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot active">1</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 1–30: Platform Narrative + Digital Foundation</h4>
+            <p>Develop the platform company narrative: who Dyno is now (not just who it was in 2021), what the Frontiers Program offers, and why the Roche/Sarepta/Novartis/Spark relationships validate the AI approach. Website content audit and refresh — hero messaging, Frontiers Program landing page, updated About/Mission. LinkedIn company page optimization: cadence, content formats, and follower growth strategy targeting biopharma decision-makers and gene therapy developers. Executive LinkedIn activation for Eric Kelsic and Adrian Veres — thought leadership positioning in AI x gene therapy.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 31–60: Frontiers Program Inbound + Employer Brand</h4>
+            <p>Build the Frontiers Program inbound funnel: SEO-optimized landing page, application flow optimization, and content targeting gene therapy developers searching for AAV solutions. Employer brand campaign: what it's like to be a machine learning engineer or molecular biologist at Dyno right now, at this moment in the company's history. Targeted content for Series B investor audience: the narrative that connects the 2021 thesis to the 2025 platform reality. Media and trade publication outreach for Frontiers Program feature coverage in GenomeWeb, BioPharma Dive, STAT News.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">3</div>
+          </div>
+          <div class="timeline-right">
+            <h4>Days 61–90: Partner Ecosystem + Compounding Visibility</h4>
+            <p>Partner ecosystem content: co-created stories with Trisk Bio and future Frontiers partners. Conference and event strategy for ASGCT 2026, ACMG, and JPMorgan Healthcare — content calendar built around the speaking and sponsorship calendar. Ongoing measurement: Frontiers Program application volume, LinkedIn follower growth among target audience, media mention velocity, and talent pipeline quality metrics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">What Taptico Delivers</div>
+      <div class="offer-box">
+        <h3>The Dyno Platform Communications System</h3>
+        <p>Platform narrative + Frontiers inbound funnel + employer brand + investor visibility. Built for the next chapter, not the last one.</p>
+        <ul>
+          <li>Platform company narrative development (website, LinkedIn, media)</li>
+          <li>Frontiers Program landing page + inbound funnel optimization</li>
+          <li>Executive LinkedIn activation (Eric Kelsic + Adrian Veres)</li>
+          <li>Employer brand campaign for ML engineers and biotech scientists</li>
+          <li>Trade media outreach (GenomeWeb, BioPharma Dive, STAT News)</li>
+          <li>Series B investor narrative content strategy</li>
+          <li>Partner ecosystem content (Trisk Bio + future Frontiers partners)</li>
+          <li>Conference and event content calendar (ASGCT, JPMorgan Healthcare)</li>
+          <li>Monthly analytics dashboard tracking application volume + visibility</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Ready to Talk?</div>
+      <div class="cta-box">
+        <h3>The platform is built. Now the world needs to know it.</h3>
+        <p>This plan is yours to keep. If you want to walk through it — 15 minutes, no pitch, just a conversation about the opportunity.</p>
+        <a href="mailto:dave@taptico.com?subject=Dyno Therapeutics — Platform Communications Discussion" class="cta-btn">Reach Out to Dave →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · April 2026<br>
+    Prepared for Dyno Therapeutics
+  </div>
+
+</div>
+</body>
+</html>
