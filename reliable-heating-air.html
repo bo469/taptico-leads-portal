@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reliable Heating & Air — 90-Day Growth Marketing Plan</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
+  .prepared-by { text-align: right; }
+  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
+  .prepared-by strong { color: #fff; font-size: 13px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
+  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; line-height: 1.6; }
+  .header-meta { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
+  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+  .section { margin-bottom: 36px; }
+  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
+  h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 6px 0; }
+  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
+  p strong { color: #1e293b; }
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
+  .signal-card.green { border-color: #86efac; background: #f0fdf4; }
+  .signal-card.blue { border-color: #93c5fd; background: #eff6ff; }
+  .signal-icon { font-size: 22px; margin-bottom: 8px; }
+  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; }
+  .timeline-dot.active { background: #3b82f6; }
+  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
+  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
+  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+  .milestone-banner { background: linear-gradient(135deg, #1a3a6b, #2563eb); border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+  .milestone-banner h4 { color: #fff; font-size: 15px; font-weight: 800; margin: 0 0 4px 0; }
+  .milestone-banner p { color: #93c5fd; font-size: 13px; margin: 0; }
+  .warning { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: #9a3412; line-height: 1.6; }
+  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
+  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
+  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
+  .offer-box ul { margin: 0; padding-left: 20px; }
+  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
+  .cta-box { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 12px; padding: 28px 32px; margin: 16px 0; text-align: center; }
+  .cta-box h3 { color: #14532d; margin: 0 0 8px 0; }
+  .cta-box p { color: #166534; margin: 0 0 16px 0; font-size: 14px; }
+  .cta-btn { display: inline-block; background: #1a3a6b; color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 700; }
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+  @media(max-width: 600px) {
+    .signal-grid { grid-template-columns: 1fr; }
+    .header { padding: 24px; }
+    .body { padding: 24px; }
+    .header-top { flex-direction: column; gap: 12px; }
+    .prepared-by { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">R</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">April 2026</p>
+      </div>
+    </div>
+    <h1>Reliable Heating &amp; Air<br>90-Day Growth Marketing Plan</h1>
+    <h2>46 years of family ownership. #1 Trane dealer in the nation. 200+ trucks on the road daily. The brand equity is real — it just isn't being fully leveraged. Here's how to change that in 90 days.</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>📍</span>Kennesaw, GA · Metro Atlanta</div>
+      <div class="meta-chip"><span>🏆</span>#1 Trane Dealer · National</div>
+      <div class="meta-chip"><span>🚛</span>200+ Trucks Daily</div>
+      <div class="meta-chip"><span>👨‍👩‍👧‍👦</span>Family-Owned Since 1978</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="section">
+      <div class="section-label">The Opportunity</div>
+      <h3>46 years of reputation. The marketing hasn't kept pace with the company.</h3>
+      <p>Dan Jape founded Reliable in 1978 on a simple premise: honesty, integrity, fair pricing, and quality service. That premise built one of the most recognized home services brands in metro Atlanta — the #1 Trane dealer in the entire nation, 300+ team members, over 200 trucks on the road every day, and two thriving nonprofits (HEAT and Sunshine on a Ranney Day) that are woven into the fabric of Atlanta's communities.</p>
+      <p>That's not a company that needs to be sold on growth. It's a company that has earned its position and is ready to protect it — because the competitive landscape has shifted faster than any time in the company's 46-year history.</p>
+
+      <div class="milestone-banner">
+        <h4>⚠️ The PE Threat Is Real and It's Here</h4>
+        <p>Private equity completed a record number of HVAC acquisitions in 2024, with activity accelerating into 2025. Coolray, One Hour, ARS, and Comfort Systems are all PE-backed and running national marketing budgets in Reliable's exact service area. They don't win on quality or community roots. They win on digital visibility — and they're outspending every independent operator in Atlanta right now.</p>
+      </div>
+
+      <p>Reliable's family-owned story, community involvement, lifetime warranties, and "Comfort as a Service" financing product are genuine differentiators. The opportunity is making sure every Atlanta homeowner who searches for HVAC, plumbing, or electrical services finds Reliable first — and understands why Reliable is different before they call anyone else.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The Buying Signals</div>
+      <h3>Four reasons right now is the moment to move.</h3>
+
+      <div class="signal-grid">
+        <div class="signal-card hot">
+          <div class="signal-icon">🏢</div>
+          <h4>PE Competitors Flooding Atlanta</h4>
+          <p>Coolray (Wrench Group), One Hour Air (Authority Brands), and ARS are running aggressive digital and LSA campaigns in metro Atlanta. They're capturing demand that should be going to Reliable — purely through marketing spend, not service quality.</p>
+        </div>
+        <div class="signal-card green">
+          <div class="signal-icon">💳</div>
+          <h4>"Comfort as a Service" Is Undermarketed</h4>
+          <p>In-house financing with no-charge repairs, maintenance, and filters is a remarkable offer. Most Atlanta homeowners have never heard of it. This product alone could drive a significant increase in long-term customer LTV with the right campaign.</p>
+        </div>
+        <div class="signal-card blue">
+          <div class="signal-icon">⚡</div>
+          <h4>Plumbing + Electrical Expansion Underexposed</h4>
+          <p>Reliable added licensed plumbers and electricians in 2010. Fourteen years later, most Atlanta homeowners still think of Reliable as an HVAC company. A targeted multi-service awareness campaign is sitting on the table uncashed.</p>
+        </div>
+        <div class="signal-card green">
+          <div class="signal-icon">❤️</div>
+          <h4>Community Story = Retention Engine</h4>
+          <p>HEAT and Sunshine on a Ranney Day are remarkable stories that differentiate Reliable from every PE-backed competitor. When homeowners know their service fee helps low-income families stay warm in winter, loyalty goes up. This story isn't being told at scale.</p>
+        </div>
+      </div>
+
+      <div class="warning">
+        <strong>The math on PE marketing spend:</strong> A PE-backed home services platform with 20 markets spends $2M–$5M/year on digital marketing in Atlanta alone. That's Google LSA dominance, retargeting at scale, and review velocity programs that push 4.8-star averages across thousands of properties. Reliable's family-owned story wins on trust. But trust requires visibility. Without the marketing to match, the best brand loses to the loudest one.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The 90-Day Plan</div>
+      <h3>Three phases. Built to protect and grow Reliable's position in Atlanta.</h3>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot active">1</div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-right">
+          <h4>Days 1–30: Digital Dominance Foundation</h4>
+          <p>Google Local Service Ads audit and optimization across all service categories (HVAC, plumbing, electrical) — targeting every zip code Reliable services. Google Business Profile expansion: separate optimized profiles for HVAC, plumbing, and electrical to capture category-specific searches. Review velocity program: systematic process to turn Reliable's 200+ daily service calls into a 5-star review engine on Google, Yelp, and Nextdoor. Goal: outrank PE-backed competitors for "AC repair near me," "plumber Atlanta," and "electrician Kennesaw" within 60 days.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-right">
+          <h4>Days 31–60: "Comfort as a Service" Campaign + Multi-Service Awareness</h4>
+          <p>Dedicated campaign for Comfort as a Service: targeted to homeowners 35-65 in Reliable's service area, emphasizing the "no-charge repairs forever" positioning. A/B tested creative showing the lifetime warranty math vs. competitors. Plumbing and electrical awareness campaign: "Did you know Reliable also does plumbing?" retargeting to existing HVAC customers — the highest-conversion audience Reliable already owns. Nextdoor advertising expansion: Reliable already has strong neighborhood presence; paid amplification turns that into systematic new customer acquisition across all service lines.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot">3</div>
+        </div>
+        <div class="timeline-right">
+          <h4>Days 61–90: Community Story at Scale + Retention Engine</h4>
+          <p>HEAT and Sunshine on a Ranney Day content series: video and social content that tells the community impact story in a way that drives emotional connection and sharing. Email nurture sequence for Reliable's existing customer base: seasonal maintenance reminders, Comfort as a Service upsell, and HEAT donation matching campaigns that turn customers into advocates. Loyalty program launch: turn Reliable's strongest customers into a systematic referral engine. Dan Jape founder story content: the 46-year journey, the family business values, and why "If it's not us, it isn't Reliable" means something different when it comes from the founder himself.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">What Taptico Delivers</div>
+      <div class="offer-box">
+        <h3>The Reliable Growth System</h3>
+        <p>Digital dominance, multi-service expansion, community storytelling, and retention — all in 90 days.</p>
+        <ul>
+          <li>Google LSA optimization across HVAC, plumbing, and electrical</li>
+          <li>Review velocity program (200+ daily service calls → systematic 5-star pipeline)</li>
+          <li>"Comfort as a Service" dedicated campaign targeting homeowners 35-65</li>
+          <li>Multi-service awareness campaign to existing HVAC customer base</li>
+          <li>Nextdoor paid amplification across all Reliable service markets</li>
+          <li>HEAT + Sunshine on a Ranney Day community story content series</li>
+          <li>Email nurture sequences for existing customers (seasonal + upsell)</li>
+          <li>Loyalty and referral program design and launch</li>
+          <li>Dan Jape founder story content (video-ready, social and web)</li>
+          <li>Monthly analytics dashboard: leads by service line, cost per acquisition, LTV</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Ready to Talk?</div>
+      <div class="cta-box">
+        <h3>46 years of trust. The marketing should tell that story louder.</h3>
+        <p>This plan is yours to keep. 15 minutes to walk through it — no pitch, just the opportunity.</p>
+        <a href="mailto:dave@taptico.com?subject=Reliable Heating %26 Air — Growth Plan Discussion" class="cta-btn">Reach Out to Dave →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · April 2026<br>
+    Prepared for Reliable Heating &amp; Air
+  </div>
+
+</div>
+</body>
+</html>
