@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adams & Martin Group — 90-Day AI-Powered Growth Plan</title>
+<style>
+  body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: #f0f4f8; color: #1e293b; }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 32px 20px; }
+  .header { background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%); border-radius: 14px 14px 0 0; padding: 36px 40px; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+  .logo-mark { width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #93c5fd; }
+  .prepared-by { text-align: right; }
+  .prepared-by p { margin: 0; color: #93c5fd; font-size: 12px; }
+  .prepared-by strong { color: #fff; font-size: 13px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 800; margin: 0 0 6px 0; line-height: 1.2; }
+  .header h2 { color: #93c5fd; font-size: 14px; font-weight: 400; margin: 0; line-height: 1.6; }
+  .header-meta { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+  .meta-chip { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: #fff; }
+  .meta-chip span { color: #93c5fd; margin-right: 4px; }
+  .body { background: #fff; border-radius: 0 0 14px 14px; padding: 40px; }
+  .section { margin-bottom: 36px; }
+  .section-label { font-size: 10px; font-weight: 800; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
+  h3 { font-size: 18px; font-weight: 700; color: #0a1628; margin: 0 0 12px 0; }
+  h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 6px 0; }
+  p { font-size: 14px; line-height: 1.75; color: #475569; margin: 0 0 12px 0; }
+  p strong { color: #1e293b; }
+  .highlight { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+  .highlight p { margin: 0; font-size: 14px; color: #1e3a5f; }
+  .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .signal-card { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+  .signal-card.hot { border-color: #fca5a5; background: #fff5f5; }
+  .signal-card.green { border-color: #86efac; background: #f0fdf4; }
+  .signal-card.blue { border-color: #93c5fd; background: #eff6ff; }
+  .signal-icon { font-size: 22px; margin-bottom: 8px; }
+  .signal-card h4 { font-size: 13px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .signal-card p { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .timeline-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+  .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: #1a3a6b; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .timeline-dot.active { background: #3b82f6; }
+  .timeline-line { width: 2px; background: #e2e8f0; flex: 1; margin-top: 4px; }
+  .timeline-right { padding-top: 4px; padding-bottom: 16px; }
+  .timeline-right h4 { font-size: 14px; font-weight: 700; color: #0a1628; margin: 0 0 4px 0; }
+  .timeline-right p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.6; }
+  .offer-box { background: #0a1628; border-radius: 12px; padding: 28px 32px; margin: 16px 0; }
+  .offer-box h3 { color: #fff; font-size: 18px; margin: 0 0 6px 0; }
+  .offer-box p { color: #93c5fd; font-size: 14px; margin: 0 0 16px 0; }
+  .offer-box ul { margin: 0; padding-left: 20px; }
+  .offer-box ul li { color: #e2e8f0; font-size: 14px; line-height: 1.8; }
+  .milestone-banner { background: linear-gradient(135deg, #1a3a6b, #2563eb); border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+  .milestone-banner h4 { color: #fff; font-size: 15px; font-weight: 800; margin: 0 0 4px 0; }
+  .milestone-banner p { color: #93c5fd; font-size: 13px; margin: 0; }
+  .warning { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 13px; color: #9a3412; line-height: 1.6; }
+  .cta-box { background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 12px; padding: 28px 32px; margin: 16px 0; text-align: center; }
+  .cta-box h3 { color: #14532d; margin: 0 0 8px 0; }
+  .cta-box p { color: #166534; margin: 0 0 16px 0; font-size: 14px; }
+  .cta-btn { display: inline-block; background: #1a3a6b; color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 700; }
+  .footer { text-align: center; padding: 24px; font-size: 11px; color: #94a3b8; }
+  @media(max-width: 600px) {
+    .signal-grid { grid-template-columns: 1fr; }
+    .header { padding: 24px; }
+    .body { padding: 24px; }
+    .header-top { flex-direction: column; gap: 12px; }
+    .prepared-by { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">A</div>
+      <div class="prepared-by">
+        <p>Prepared by</p>
+        <strong>Taptico Solutions</strong>
+        <p style="margin-top:2px;">April 2026</p>
+      </div>
+    </div>
+    <h1>Adams &amp; Martin Group<br>90-Day AI-Powered Growth Plan</h1>
+    <h2>Legal staffing is being disrupted by AI faster than any other recruiting vertical. The firms that build AI into their own candidate discovery and client acquisition right now will own the market. The ones that wait will be placing the people who replaced them.</h2>
+    <div class="header-meta">
+      <div class="meta-chip"><span>⚖️</span>Legal Staffing · National</div>
+      <div class="meta-chip"><span>🏢</span>Roth Staffing Companies</div>
+      <div class="meta-chip"><span>📍</span>Atlanta Market</div>
+      <div class="meta-chip"><span>🤖</span>AI Disruption Moment</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="section">
+      <div class="section-label">The Inflection Point</div>
+      <h3>Adams &amp; Martin is already helping clients adopt AI. The question is whether they're using it themselves.</h3>
+      <p>The AI Solutions Manager role posted for an Atlanta AM Law firm is a signal worth paying attention to — not just as a placement, but as a market indicator. Law firms are actively hiring people to manage AI tool adoption at the firm level. That's a category of role that didn't exist three years ago. It's growing. And it's happening inside the exact client base Adams &amp; Martin serves every day.</p>
+      <p>Here's the irony: the staffing firms that help law firms adopt AI will be disrupted by AI themselves — unless they're building their own AI-powered recruiting and BD infrastructure at the same time. The race isn't between legal staffing firms. It's between the firms that adapt and the firms that get replaced.</p>
+
+      <div class="milestone-banner">
+        <h4>🚨 The Staffing Industry's AI Moment</h4>
+        <p>LinkedIn, Indeed, and HireEZ are all building AI-first candidate matching. LexisNexis and Thomson Reuters are building AI into every legal workflow. The staffing firms that integrate AI into their candidate sourcing, screening, and client outreach now will have an unfair advantage within 18 months. Those that don't will watch margins compress until the model breaks.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The Opportunity</div>
+      <h3>Four places AI creates immediate leverage for Adams &amp; Martin Atlanta.</h3>
+
+      <div class="signal-grid">
+        <div class="signal-card green">
+          <div class="signal-icon">🔍</div>
+          <h4>AI Candidate Discovery</h4>
+          <p>Passive legal talent — the paralegals and associates who aren't actively job hunting — are invisible to traditional sourcing. AI-powered tools surface them from LinkedIn, alumni networks, bar associations, and court filings before competitors make contact.</p>
+        </div>
+        <div class="signal-card blue">
+          <div class="signal-icon">📧</div>
+          <h4>AI-Powered BD Outreach</h4>
+          <p>Law firm hiring managers and legal department heads are notoriously hard to reach. AI enables hyper-personalized outreach at scale — triggered by job postings, firm growth signals, lateral partner moves, and practice area expansions.</p>
+        </div>
+        <div class="signal-card green">
+          <div class="signal-icon">⚡</div>
+          <h4>Speed to Placement</h4>
+          <p>The firm that presents the best candidate first wins the placement. AI screening and matching compresses the sourcing-to-submittal timeline from days to hours. In a market where the best candidates are off the table in 48 hours, that's the whole game.</p>
+        </div>
+        <div class="signal-card hot">
+          <div class="signal-icon">📊</div>
+          <h4>Market Intelligence Edge</h4>
+          <p>AI can monitor every law firm in Atlanta for hiring signals — job postings, growth announcements, lateral moves, mergers — and alert the BD team before the firm calls a recruiter. Proactive beats reactive every time.</p>
+        </div>
+      </div>
+
+      <div class="warning">
+        <strong>The cost of waiting:</strong> Every major legal staffing competitor — Major, Lindsey & Africa; Special Counsel; Hire Counsel — is piloting AI sourcing tools right now. The firms that build the capability first will capture disproportionate placements in 2026-2027. The window to build before competitors have it is closing, not opening.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The 90-Day Plan</div>
+      <h3>Three phases. Built to make Adams &amp; Martin Atlanta the most AI-enabled legal recruiting office in the market.</h3>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot active">1</div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-right">
+          <h4>Days 1–30: Market Intelligence + BD Automation</h4>
+          <p>Build an AI-powered Atlanta law firm monitoring system: track every firm for hiring signals (new job postings, lateral partner announcements, mergers, practice group expansions). Set up automated BD outreach sequences triggered by those signals — personalized to the hiring manager, the firm's current needs, and the type of role being posted. Configure LinkedIn Sales Navigator + AI personalization layer for Senior Market Director outreach. Every touch point feels handcrafted. None of it is manual.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-line"></div>
+        </div>
+        <div class="timeline-right">
+          <h4>Days 31–60: AI Candidate Sourcing + Speed-to-Submittal</h4>
+          <p>Implement AI candidate discovery for passive legal talent in Atlanta: paralegals, legal secretaries, litigation support specialists, and AI-focused roles (exactly the kind being placed now). Build the screening workflow that compresses time from identifying a candidate to submitting them — AI-assisted resume scoring, outreach personalization, and interview scheduling automation. Target: cut average time-to-submittal by 40%+. First-mover advantage on every hot requirement.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-dot">3</div>
+        </div>
+        <div class="timeline-right">
+          <h4>Days 61–90: Thought Leadership + Market Positioning</h4>
+          <p>Adams &amp; Martin Atlanta becomes the visible AI-in-legal-staffing authority in the market. LinkedIn content series from the Atlanta market directors: AI's impact on legal hiring, what law firms need to know about the AI talent market, how to hire an AI Solutions Manager (timely given the current posting). Monthly market intelligence newsletter to Atlanta law firm hiring managers. Goal: when an Atlanta law firm needs legal talent, Adams &amp; Martin is the first call — not because of a cold email, but because they've been reading the insights for 90 days.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">What Taptico Delivers</div>
+      <div class="offer-box">
+        <h3>The Adams &amp; Martin AI Growth System</h3>
+        <p>AI-powered BD, candidate discovery, and thought leadership — built for the Atlanta market, ready in 90 days.</p>
+        <ul>
+          <li>Atlanta law firm hiring signal monitoring (real-time BD triggers)</li>
+          <li>AI-personalized outreach sequences for hiring managers and GCs</li>
+          <li>LinkedIn Sales Navigator + AI personalization layer for market directors</li>
+          <li>Passive candidate discovery for high-demand legal roles</li>
+          <li>AI screening workflow to compress time-to-submittal</li>
+          <li>Thought leadership content series: AI in legal hiring</li>
+          <li>Monthly market intelligence newsletter to Atlanta law firm clients</li>
+          <li>Competitor monitoring: Major Lindsey, Special Counsel, Hire Counsel activity</li>
+          <li>Monthly analytics dashboard: BD pipeline velocity + placement attribution</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Ready to Talk?</div>
+      <div class="cta-box">
+        <h3>The AI moment in legal staffing is now. Not next year.</h3>
+        <p>15 minutes to walk through what this looks like for the Atlanta market specifically. No pitch — just the plan.</p>
+        <a href="mailto:dave@taptico.com?subject=Adams %26 Martin Group — AI Growth Plan Discussion" class="cta-btn">Reach Out to Dave →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Taptico Solutions · dave@taptico.com · tapticosolutions.com · April 2026<br>
+    Prepared for Adams &amp; Martin Group
+  </div>
+
+</div>
+</body>
+</html>
